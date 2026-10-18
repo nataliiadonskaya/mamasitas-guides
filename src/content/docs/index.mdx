@@ -1,15 +1,17 @@
 ---
-title: "MamaSitas — Легализация в Испании"
+title: "MamaSitas — База знаний"
 template: splash
+hero:
+  title: ""
 ---
 
-<div class="chat-container">
-  {/* Аватарка из вашего Telegram */}
-  <img src="https://t.me/i/userpic/320/mamasitas_es.jpg" alt="MamaSitas Expert" class="avatar" />
-  
-  <h1 class="chat-title">Привет! Я — MamaSitas 👋</h1>
-  <p class="chat-subtitle">Практическая база знаний по легализации в Испании. Что вас интересует?</p>
-  
+<div class="main-card">
+  <div class="profile-block">
+    <img src="https://t.me/i/userpic/320/mamasitas_es.jpg" alt="MamaSitas" class="avatar" />
+    <h1 class="brand-title">MamaSitas</h1>
+    <p class="brand-tagline">Практическая база знаний по легализации в Испании</p>
+  </div>
+
   <div class="chat-options">
     <a href="/guides/ex-26-autonomo/" class="chat-btn">
       <span>💼 Переход на Autónomo (EX-26)</span>
@@ -30,78 +32,89 @@ template: splash
 </div>
 
 <style>{`
-  /* Скрываем верхний заголовок и нижний блок навигации (Next/Previous) */
-  .hero, footer, .pagination-single {
+  /* Жестко скрываем все системные заголовки и футеры Astro */
+  .hero-html, .hero, header.hero, footer, .pagination-single {
     display: none !important;
   }
   
-  .chat-container {
-    --sl-color-accent: #C7A153;
-    --brand-dark: #2B161B;
+  /* Контейнер страницы */
+  .main-card {
+    --gold: #C7A153;
+    --dark-wine: #2B161B;
 
-    max-width: 500px;
+    max-width: 440px;
     margin: 0 auto;
+    padding: 1rem;
     text-align: center;
-    padding: 1.5rem 1rem;
   }
+
+  .profile-block {
+    margin-bottom: 1.8rem;
+  }
+
   .avatar {
-    width: 140px;
-    height: 140px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    margin: 0 auto 1.5rem auto;
-    box-shadow: 0 8px 24px rgba(199, 161, 83, 0.3);
-    border: 3px solid var(--sl-color-accent);
+    margin: 0 auto 1rem auto;
+    border: 3px solid var(--gold);
+    box-shadow: 0 6px 20px rgba(199, 161, 83, 0.25);
     object-fit: cover;
     display: block;
   }
-  .chat-title {
-    font-size: 2.2rem !important;
-    font-weight: 700;
-    margin-bottom: 0.5rem !important;
-    line-height: 1.2;
-    color: var(--sl-color-white) !important;
+
+  .brand-title {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    margin: 0 0 0.4rem 0 !important;
+    line-height: 1.1;
   }
-  .chat-subtitle {
-    font-size: 1.1rem;
+
+  .brand-tagline {
+    font-size: 0.95rem;
     color: var(--sl-color-gray-3);
-    margin-bottom: 2rem;
-    line-height: 1.4;
+    margin: 0;
+    line-height: 1.3;
   }
+
   .chat-options {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.75rem;
   }
+
   .chat-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.1rem 1.4rem;
+    padding: 1rem 1.2rem;
     background-color: var(--sl-color-bg-nav);
     color: var(--sl-color-white) !important;
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: 18px;
+    border: 1px solid rgba(199, 161, 83, 0.2);
+    border-radius: 16px;
     text-decoration: none !important;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 500;
     transition: all 0.2s ease;
   }
+
   .chat-btn:hover {
-    background-color: var(--brand-dark);
-    border-color: var(--sl-color-accent);
+    background-color: var(--dark-wine);
+    border-color: var(--gold);
     transform: translateY(-2px);
   }
+
   .chat-btn.primary {
-    background-color: var(--sl-color-accent);
+    background-color: var(--gold);
     color: #111 !important;
     border: none;
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
     font-weight: 600;
-    border-radius: 18px;
   }
+
   .chat-btn.primary:hover {
     opacity: 0.92;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(199, 161, 83, 0.4);
+    box-shadow: 0 4px 14px rgba(199, 161, 83, 0.35);
   }
 `}</style>
