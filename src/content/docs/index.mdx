@@ -24,14 +24,14 @@ template: splash
       <span>💳 Как оплатить пошлины (Tasas)</span>
     </a>
     <a href="https://t.me/mamasitas_es" class="chat-btn primary" target="_blank" rel="noopener noreferrer">
-      <span>💬 Записаться на личную консультацию</span>
+      <span>📢 Telegram-канал MamaSitas (еще больше тем)</span>
     </a>
   </div>
 </div>
 
 <style>{`
-  /* Скрываем стандартный заголовок Astro, чтобы остался только наш чистый дизайн */
-  .hero {
+  /* Скрываем верхний заголовок и нижний блок навигации (Next/Previous) */
+  .hero, footer, .pagination-single {
     display: none !important;
   }
   
@@ -39,7 +39,7 @@ template: splash
     --sl-color-accent: #C7A153;
     --brand-dark: #2B161B;
 
-    max-width: 480px;
+    max-width: 500px;
     margin: 0 auto;
     text-align: center;
     padding: 1.5rem 1rem;
