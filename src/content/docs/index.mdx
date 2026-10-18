@@ -1,40 +1,55 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: MAMASITAS — Экспертные гайды по Испании
+description: Пошаговые инструкции по оформлению ВНЖ и резиденций в Испании
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
+  title: MAMASITAS
+  tagline: Ваш персональный навигатор по легализации и оформлению документов в Испании
   actions:
-    - text: Example Guide
-      link: /guides/example/
-      icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Telegram-канал @mamasitas_es
+      link: https://t.me/mamasitas_es
       icon: external
-      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+<div class="mamasitas-hero-card">
+  <h3>✨ Пошаговые руководства и нормы 2026 года</h3>
+  <p>Выберите нужный раздел ниже, чтобы получить подробный разбор процедуры, правильные коды госпошлин (Tasas) и чек-листы документов без лишней бюрократии.</p>
+</div>
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+## 📌 Выберите процедуру
+
+<CardGrid>
+  <Card title="💼 Взрослым: Autónomo (EX-26)" icon="rocket">
+    Модификация с Временной Защиты на работу на себя (por cuenta propia).
+    
+    * **Пошлины:** Tasa 052 (€10,94) и Tasa 062 п. 3.1 (€203,84).
+    * **Регламент:** RD 1155/2024 и Инструкция SEM 2/2026.
+    
+    [**Перейти к инструкции по Autónomo →**](/guides/ex-26-autonomo)
+  </Card>
+
+  <Card title="📄 Взрослым: Работа по найму (EX-26)" icon="document">
+    Переход при наличии трудового контракта и стажа от 1 года (por cuenta ajena).
+    
+    * **Пошлины:** Tasa 052 при подаче; Tasa 062 оплачивает работодатель после requerimiento.
+    
+    [**Перейти к инструкции по найму →**](/guides/ex-26-cuenta-ajena)
+  </Card>
+
+  <Card title="👶 Детям до 18 лет (EX-25)" icon="star">
+    Оформление собственной резиденции несовершеннолетним (ст. 160 RD 1155/2024).
+    
+    * **Пошлины:** Tasa 052 п. 2.1.5 (€10,94).
+    * **Особенность:** Объединенный PDF оплаты и согласие второго родителя.
+    
+    [**Перейти к инструкции на ребёнка →**](/guides/ex-25-menores)
+  </Card>
+
+  <Card title="💳 Справочник по госпошлинам" icon="setting">
+    Полный разбор моделей 790-052, 790-062 и 790-012 с правильными пунктами и суммами.
+    
+    [**Открыть справочник по Тасам →**](/reference/tasas)
+  </Card>
 </CardGrid>

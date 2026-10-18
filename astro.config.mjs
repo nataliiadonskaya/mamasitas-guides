@@ -6,19 +6,31 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'MamaSitas — Гайды по резиденциям в Испании',
+			customCss: ['./src/styles/custom.css'],
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' },
+				{ icon: 'telegram', label: 'Telegram', href: 'https://t.me/mamasitas_es' },
+			],
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Главное',
+					items: [{ slug: 'index' }],
+				},
+				{
+					label: 'Временная защита (Переход)',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ slug: 'guides/ex-26-autonomo' },
+						{ slug: 'guides/ex-26-cuenta-ajena' },
 					],
 				},
 				{
-					label: 'Reference',
-					items: [{ autogenerate: { directory: 'reference' } }],
+					label: 'Детям',
+					items: [{ slug: 'guides/ex-25-menores' }],
+				},
+				{
+					label: 'Справочник',
+					items: [{ slug: 'reference/tasas' }],
 				},
 			],
 		}),
