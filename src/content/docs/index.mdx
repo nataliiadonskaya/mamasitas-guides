@@ -1,66 +1,99 @@
 ---
-title: "MamaSitas — Гайды по легализации в Испании"
-description: "Пошаговые инструкции по переходу с временной защиты (Protección Temporal) на стандартные ВНЖ."
+title: "MamaSitas — Легализация в Испании"
 template: splash
-hero:
-  tagline: "Практическая база знаний для украинцев в Испании. Актуальные регламенты RD 1155/2024 и инструкция SEM 2/2026."
-  actions:
-    - text: Инструкция Autónomo (EX-26)
-      link: /guides/ex-26-autonomo/
-      icon: right-arrow
-      variant: primary
-    - text: Telegram @mamasitas_es
-      link: https://t.me/mamasitas_es
-      icon: external
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+<div class="chat-container">
+  {/* Автоматически забираем ваш аватар из Telegram */}
+  <img src="https://t.me/i/userpic/320/mamasitas_es.jpg" alt="MamaSitas Expert" class="avatar" />
+  
+  <h1 class="chat-title">Привет! Я — MamaSitas 👋</h1>
+  <p class="chat-subtitle">Помогаю с легализацией в Испании. Что вас интересует?</p>
+  
+  <div class="chat-options">
+    <a href="/guides/ex-26-autonomo/" class="chat-btn">
+      <span>💼 Переход на Autónomo (EX-26)</span>
+    </a>
+    <a href="/guides/ex-26-cuenta-ajena/" class="chat-btn">
+      <span>🏢 Работа по контракту (Cuenta Ajena)</span>
+    </a>
+    <a href="/guides/ex-25-menores/" class="chat-btn">
+      <span>🧒 Резиденция для детей (EX-25)</span>
+    </a>
+    <a href="/reference/tasas/" class="chat-btn">
+      <span>💳 Как оплатить пошлины (Tasas)</span>
+    </a>
+    <a href="https://t.me/mamasitas_es" class="chat-btn primary">
+      <span>💬 Записаться на личную консультацию</span>
+    </a>
+  </div>
+</div>
 
-## Популярные инструкции
+<style>
+  .chat-container {
+    --sl-color-accent: #C7A153;
+    --brand-dark: #2B161B;
 
-<CardGrid stagger>
-  <Card title="Переход на Autónomo (EX-26)" icon="document">
-    Подробный разбор подачи документов для работающих на себя. Разбор оплаты пошлин Modelo 790-052 (код 2.5.2) и Modelo 790-062 (пункт 3.1).
-    
-    [Читать гайд →](/guides/ex-26-autonomo/)
-  </Card>
-
-  <Card title="Переход на Cuenta Ajena (EX-26)" icon="laptop">
-    Гайд для официально трудоустроенных лиц с опытом работы от 1 года. Порядок оформления и работы с работодателем.
-    
-    [Читать гайд →](/guides/ex-26-cuenta-ajena/)
-  </Card>
-
-  <Card title="Резиденция для детей (EX-25)" icon="badge">
-    Оформление несовершеннолетних по статье 160. Порядок оплаты пошлины Tasa 052 (пункт 2.1.5) на имя ребенка.
-    
-    [Читать гайд →](/guides/ex-25-menores/)
-  </Card>
-
-  <Card title="Справочник пошлин (Tasas)" icon="setting">
-    Актуальные суммы, коды форм и правила объединения квитанций в единый PDF перед загрузкой в Mercurio.
-    
-    [Смотреть справочник →](/reference/tasas/)
-  </Card>
-</CardGrid>
-
----
-
-## Официальные бланки и формы (PDF)
-
-Вы можете скачать официальные бланки документов для заполнения и подачи:
-
-- 📄 **[Скачать форму EX-26 (PDF)](https://extranjeros.inclusion.gob.es/ficheros/Modelos_solicitudes/mod_solicitudes2/26-Solicitud_residencia_y_trabajo.pdf)** — Для Autónomo и Cuenta Ajena.
-- 📄 **[Скачать форму EX-25 (PDF)](https://extranjeros.inclusion.gob.es/ficheros/Modelos_solicitudes/mod_solicitudes2/25-Solicitud_residencia_menores.pdf)** — Для несовершеннолетних детей.
-- 💳 **[Генератор Modelo 790-052](https://mpt.gob.es/tasas790/Tasa052)** — Формирование пошлины 052 онлайн.
-- 💳 **[Генератор Modelo 790-062](https://mpt.gob.es/tasas790/Tasa062)** — Формирование пошлины 062 онлайн.
-
----
-
-## Нужна индивидуальная помощь?
-
-Каждая ситуация с контрактами, стажем и регионом уникальна. Ошибки в кодах пошлин или форме часто приводят к приостановке дела (requerimiento). 
-
-Если вам нужна персональная проверка пакета документов перед подачей в Mercurio или полный разбор вашего кейса:
-
-👉 **[Записаться на консультацию в Telegram @mamasitas_es](https://t.me/mamasitas_es)**
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 24px rgba(199, 161, 83, 0.25);
+    border: 3px solid var(--sl-color-accent);
+    object-fit: cover;
+  }
+  .chat-title {
+    font-size: 2rem !important;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .chat-subtitle {
+    font-size: 1.1rem;
+    color: var(--sl-color-gray-3);
+    margin-bottom: 2rem;
+  }
+  .chat-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .chat-btn {
+    display: flex;
+    align-items: center;
+    padding: 1.1rem 1.4rem;
+    background-color: var(--sl-color-bg-nav);
+    color: var(--sl-color-white) !important;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 18px;
+    text-decoration: none !important;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .chat-btn:hover {
+    background-color: var(--brand-dark);
+    border-color: var(--sl-color-accent);
+    transform: translateY(-2px);
+  }
+  .chat-btn.primary {
+    background-color: var(--sl-color-accent);
+    color: #111 !important;
+    border: none;
+    justify-content: center;
+    margin-top: 0.8rem;
+    font-weight: 600;
+    border-radius: 18px;
+  }
+  .chat-btn.primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(199, 161, 83, 0.4);
+  }
+</style>
