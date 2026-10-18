@@ -11,191 +11,132 @@ hero:
       <img src="https://t.me/i/userpic/320/mamasitas_es.jpg" alt="MamaSitas" class="avatar" />
     </div>
     <h1 class="brand-title">MamaSitas</h1>
-    <p class="brand-tagline">Экспертная база знаний по легализации в Испании</p>
-    
+    <p class="brand-tagline">База знаний по легализации в Испании</p>
   </div>
 
   <div class="chat-options">
     <a href="/guides/ex-26-autonomo/" class="chat-btn">
-      <span class="btn-text">💼 Переход на Autónomo (EX-26)</span>
+      <span>💼 Переход на Autónomo (EX-26)</span>
       <span class="arrow">→</span>
     </a>
     <a href="/guides/ex-26-cuenta-ajena/" class="chat-btn">
-      <span class="btn-text">🏢 Работа по контракту (Cuenta Ajena)</span>
+      <span>🏢 Работа по контракту (Cuenta Ajena)</span>
       <span class="arrow">→</span>
     </a>
     <a href="/guides/ex-25-menores/" class="chat-btn">
-      <span class="btn-text">🧒 Резиденция для детей (EX-25)</span>
+      <span>🧒 Резиденция для детей (EX-25)</span>
       <span class="arrow">→</span>
     </a>
     <a href="/reference/tasas/" class="chat-btn">
-      <span class="btn-text">💳 Как оплатить пошлины (Tasas)</span>
+      <span>💳 Как оплатить пошлины (Tasas)</span>
       <span class="arrow">→</span>
     </a>
     
     <a href="https://t.me/mamasitas_es" class="chat-btn primary" target="_blank" rel="noopener noreferrer">
       <span>✈️ Telegram-канал MamaSitas</span>
-      <span class="subtext">Разборы кейсов, новости и личные консультации</span>
     </a>
-  </div>
-
-  <div class="trust-footer">
-    <span>🔒 Проверенные инструкции</span> • <span>🇪🇸 Актуальное законодательство</span>
   </div>
 </div>
 
 <style>{`
-  /* Скрываем системные элементы Starlight и верхнюю шапку сайта */
-  .hero-html, .hero, header.hero, footer, .pagination-single, header {
+  /* Полностью убираем верхнюю шапку, поиск, гамбургер-меню и футер */
+  header, .header, .hero-html, .hero, header.hero, footer, .pagination-single {
     display: none !important;
+  }
+
+  /* Разворачиваем контент на весь экран без внутренних отступов шаблона */
+  .main-frame, .main-pane, main {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .main-card {
     --gold: #C7A153;
     --gold-light: #E5C378;
-    --dark-wine: #210F13;
     --card-bg: rgba(43, 22, 27, 0.6);
 
-    max-width: 460px;
+    max-width: 420px;
     margin: 0 auto;
-    padding: 2rem 1.2rem;
+    padding: 1rem 1rem 0.5rem 1rem;
     text-align: center;
   }
 
-  /* Аватарка со свечением */
-  .avatar-wrapper {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 1.2rem auto;
+  .profile-block {
+    margin-bottom: 1rem;
   }
 
-  .avatar-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    border-radius: 50%;
-    box-shadow: 0 0 35px rgba(199, 161, 83, 0.45);
-    z-index: 1;
+  .avatar-wrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 0.6rem auto;
   }
 
   .avatar {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 3px solid var(--gold);
+    border: 2px solid var(--gold);
     object-fit: cover;
-    position: relative;
-    z-index: 2;
+    box-shadow: 0 0 20px rgba(199, 161, 83, 0.35);
     display: block;
   }
 
   .brand-title {
-    font-size: 2.2rem !important;
+    font-size: 1.8rem !important;
     font-weight: 800 !important;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #FFFFFF 0%, var(--gold-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0 0 0.4rem 0 !important;
+    color: #FFFFFF !important;
+    margin: 0 0 0.2rem 0 !important;
     line-height: 1.1;
   }
 
   .brand-tagline {
-    font-size: 1rem;
+    font-size: 0.88rem;
     color: #D1C4C6;
-    margin: 0 0 0.8rem 0;
-    line-height: 1.3;
+    margin: 0;
+    line-height: 1.2;
   }
 
-  .badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: rgba(199, 161, 83, 0.15);
-    border: 1px solid rgba(199, 161, 83, 0.3);
-    border-radius: 20px;
-    font-size: 0.78rem;
-    color: var(--gold-light);
-    font-weight: 600;
-    margin-bottom: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  /* Кнопки */
   .chat-options {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.6rem;
   }
 
   .chat-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.1rem 1.3rem;
+    padding: 0.85rem 1.1rem;
     background: var(--card-bg);
-    backdrop-filter: blur(10px);
     color: #FFFFFF !important;
     border: 1px solid rgba(199, 161, 83, 0.25);
-    border-radius: 18px;
+    border-radius: 14px;
     text-decoration: none !important;
-    font-size: 1.02rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s ease;
   }
 
   .chat-btn:hover {
     background: rgba(199, 161, 83, 0.18);
     border-color: var(--gold);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   }
 
   .chat-btn .arrow {
     color: var(--gold);
-    font-size: 1.2rem;
-    transition: transform 0.2s ease;
+    font-size: 1rem;
   }
 
-  .chat-btn:hover .arrow {
-    transform: translateX(4px);
-  }
-
-  /* Главная акцентная кнопка Telegram */
   .chat-btn.primary {
     background: linear-gradient(135deg, var(--gold) 0%, #B08A3C 100%);
     color: #111111 !important;
     border: none;
-    margin-top: 0.6rem;
-    flex-direction: column;
+    margin-top: 0.3rem;
     justify-content: center;
-    padding: 1.2rem;
-    border-radius: 18px;
-    box-shadow: 0 6px 20px rgba(199, 161, 83, 0.3);
-  }
-
-  .chat-btn.primary span:first-child {
-    font-size: 1.1rem;
+    padding: 0.95rem;
+    border-radius: 14px;
     font-weight: 700;
-  }
-
-  .chat-btn.primary .subtext {
-    font-size: 0.82rem;
-    opacity: 0.85;
-    font-weight: 400;
-    margin-top: 0.2rem;
-  }
-
-  .chat-btn.primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(199, 161, 83, 0.45);
-    opacity: 0.96;
-  }
-
-  .trust-footer {
-    margin-top: 2rem;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 4px 15px rgba(199, 161, 83, 0.3);
   }
 `}</style>
