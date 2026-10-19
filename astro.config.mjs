@@ -12,6 +12,7 @@ export default defineConfig({
           lang: 'ru',
         },
       },
+      tableOfContents: false,
       social: [
         { icon: 'telegram', label: 'Telegram', href: 'https://t.me/mamasitas_es' },
       ],
