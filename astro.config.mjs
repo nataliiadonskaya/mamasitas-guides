@@ -12,7 +12,7 @@ export default defineConfig({
         {
           label: 'Главное',
           items: [
-            { label: 'Старт / База знаний', link: '/' },
+            { label: 'Старт / База знаний (RU)', link: '/' },
             { label: 'Старт / База знань (UK)', link: '/uk/' },
           ],
         },
@@ -29,7 +29,8 @@ export default defineConfig({
         },
         {
           label: 'Справочник',
-          items: },
+          items: [
+            { label: 'Оплата пошлин (RU)', link: '/reference/tasas/' },
             { label: 'Оплата пошлин (UK)', link: '/uk/reference/tasas/' },
           ],
         },
