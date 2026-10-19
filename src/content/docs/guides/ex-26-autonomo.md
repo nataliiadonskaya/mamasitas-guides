@@ -71,10 +71,24 @@ description: "Пошаговое руководство по модификац�
 
 ---
 
-:::note[Важно]
+<div style="background: rgba(43, 22, 27, 0.85); border: 1px solid rgba(199, 161, 83, 0.4); border-left: 4px solid #c7a153; padding: 1.2rem; border-radius: 8px; margin: 1.5rem 0; color: #f3e9eb;">
 
-Все иностранные документы должны быть переведены присяжным переводчиком в Испании (*Traductor Jurado*) и при необходимости апостилированы.  
+  <div style="font-weight: 700; color: #c7a153; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
 
-Проверить список стран и правила апостилирования можно на <a href="[https://www.hcch.net/en/instruments/conventions/authorities1/?cid=41](https://www.hcch.net/en/instruments/conventions/authorities1/?cid=41)" target="_blank" rel="noopener noreferrer">официальном сайте Гаагской конвенции (HCCH)</a>.
+    <span>⚠️</span> Важно
 
-:::
+  </div>
+
+  <p style="margin: 0 0 0.8rem 0; font-size: 0.95rem; line-height: 1.5;">
+
+    Все иностранные документы должны быть переведены присяжным переводчиком в Испании (<em>Traductor Jurado</em>) и при необходимости апостилированы.
+
+  </p>
+
+  <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;">
+
+    Проверить список стран и правила апостилирования можно на <a href="[https://www.hcch.net/en/instruments/conventions/authorities1/?cid=41](https://www.hcch.net/en/instruments/conventions/authorities1/?cid=41)" target="_blank" rel="noopener noreferrer" style="color: #c7a153; text-decoration: underline; font-weight: 600;">официальном сайте Гаагской конвенции (HCCH)</a>.
+
+  </p>
+
+</div>
