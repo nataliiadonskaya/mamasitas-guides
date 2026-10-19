@@ -29,8 +29,7 @@ export default defineConfig({
         },
         {
           label: 'Справочник',
-          items: [
-            { label: 'Оплата пошлин (Tasas)', link: '/reference/tasas/' },
+          items: },
             { label: 'Оплата пошлин (UK)', link: '/uk/reference/tasas/' },
           ],
         },
