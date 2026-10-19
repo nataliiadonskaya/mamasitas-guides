@@ -10,19 +10,37 @@ description: Калькулятор та довідник з пошлин Modelo
 ## 🧮 Інтерактивний калькулятор пошлин
 
 <div class="tasa-box">
-  <label for="procedure" class="tasa-label">Ваша процедура легалізації:</label>
-  <select id="procedure" class="tasa-select" onchange="updateCalc()">
-    <option value="autonomo">💼 Перехід на Autónomo (EX-26)</option>
-    <option value="cuenta-ajena">🏢 Робота за контрактом / Cuenta Ajena (EX-26)</option>
-    <option value="menores">🧒 Резиденція для неповнолітніх дітей (EX-25)</option>
-  </select>
 
-  <div class="t<div class="tasa-card" id="card-062">
-      <div class="tasa-badge">Modelo 790-062</div>
-      <div class="tasa-name">Мито за роботу (Trabajo)</div>
-      <div class="tasa-price" id="res-062">€203.84</div>
-    </div>
-  </div>
+<label for="procedure" class="tasa-label">Ваша процедура легалізації:</label>
+
+<select id="procedure" class="tasa-select">
+  <option value="autonomo">💼 Перехід на Autónomo (EX-26)</option>
+  <option value="cuenta-ajena">🏢 Робота за контрактом / Cuenta Ajena (EX-26)</option>
+  <option value="menores">🧒 Резиденція для неповнолітніх дітей (EX-25)</option>
+</select>
+
+<div class="tasa-grid">
+
+<div class="tasa-card">
+
+<div class="tasa-badge">Modelo 790-052</div>
+
+<div class="tasa-name">Мито за проживання (Residencia)</div>
+
+<div class="tasa-price" id="res-052">€10.94</div>
+
 </div>
 
-<script is:inline>{
+<div class="tasa-card" id="card-062">
+
+<div class="tasa-badge">Modelo 790-062</div>
+
+<div class="tasa-name">Мито за роботу (Trabajo)</div>
+
+<div class="tasa-price" id="res-062">€203.84</div>
+
+</div>
+
+</div>
+
+</div>
