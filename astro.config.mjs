@@ -1,4 +1,3 @@
-cat << 'EOF' > astro.config.mjs
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
@@ -34,9 +33,7 @@ export default defineConfig({
         },
         {
           label: 'Детям',
-          items: [{ label: 'EX-25 Menores', link: '/guides/ex25-menores/' }],
-        },
-        {
+          items:  {
           label: 'Справочник',
           items: [{ label: 'Оплата пошлин (Tasas)', link: '/reference/tasas/' }],
         },
@@ -45,4 +42,3 @@ export default defineConfig({
     }),
   ],
 });
-EOF
