@@ -120,3 +120,36 @@ header.header {
 	color: #c7a153 !important;
 	text-decoration: underline;
   }
+  /* --- Стили для боковой панели (сайдбара) --- */
+nav.sidebar, 
+.sidebar-pane, 
+.mobile-preferences,
+starlight-toc {
+  background-color: #1a0b10 !important;
+  border-right: 1px solid rgba(199, 161, 83, 0.2) !important;
+}
+
+nav.sidebar a, 
+.sidebar-content a {
+  color: #d1c4c6 !important;
+}
+
+.sidebar-group label, 
+.sidebar-group summary,
+.sidebar-content .group-label {
+  color: #c7a153 !important;
+  font-weight: 700 !important;
+}
+
+nav.sidebar a[aria-current="page"], 
+.sidebar-content a[aria-current="page"] {
+  background: rgba(199, 161, 83, 0.15) !important;
+  color: #c7a153 !important;
+  border-left: 3px solid #c7a153 !important;
+  font-weight: 600;
+}
+
+.sidebar-container, 
+.sidebar-pane {
+  background-color: #1a0b10 !important;
+}
