@@ -24,7 +24,11 @@ export default defineConfig({
           label: 'Главное',
           translations: { uk: 'Головне' },
           items: [
-            { label: 'Старт / База знаний', link: '/' },
+            { 
+              label: 'Старт / База знаний', 
+              translations: { uk: 'Старт / База знань' },
+              link: '/' 
+            },
           ],
         },
         {
@@ -46,7 +50,11 @@ export default defineConfig({
           label: 'Справочник',
           translations: { uk: 'Довідник' },
           items: [
-            { label: 'Оплата пошлин (Tasas)', link: '/reference/tasas/' },
+            { 
+              label: 'Оплата пошлин (Tasas)', 
+              translations: { uk: 'Оплата мита (Tasas)' },
+              link: '/reference/tasas/' 
+            },
           ],
         },
       ],
