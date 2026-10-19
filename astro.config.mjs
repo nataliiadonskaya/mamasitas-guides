@@ -5,12 +5,25 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'MamaSitas',
+      defaultLocale: 'root',
+      locales: {
+        root: {
+          label: 'Русский',
+          lang: 'ru',
+        },
+        uk: {
+          label: 'Українська',
+          lang: 'uk',
+        },
+      },
+      social: [
+        { icon: 'telegram', label: 'Telegram', href: 'https://t.me/mamasitas_es' },
+      ],
       sidebar: [
         {
-          label: 'Главное / Головне',
+          label: 'Главное',
           items: [
-            { label: 'Старт / База знаний (RU)', link: '/' },
-            { label: 'Старт / База знань (UK)', link: '/uk/' },
+            { label: 'Старт / База знаний', link: '/' },
           ],
         },
         {
@@ -22,13 +35,14 @@ export default defineConfig({
         },
         {
           label: 'Детям',
-          items: [{ label: 'EX-25 Menores', link: '/guides/ex25-menores/' }],
+          items: [
+            { label: 'EX-25 Menores', link: '/guides/ex25-menores/' },
+          ],
         },
         {
-          label: 'Справочник / Довідник',
+          label: 'Справочник',
           items: [
-            { label: 'Оплата пошлин (RU)', link: '/reference/tasas/' },
-            { label: 'Оплата пошлин (UK)', link: '/uk/reference/tasas/' },
+            { label: 'Оплата пошлин (Tasas)', link: '/reference/tasas/' },
           ],
         },
       ],
