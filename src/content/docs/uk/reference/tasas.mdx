@@ -1,0 +1,28 @@
+---
+title: Оплата держмита (Tasas)
+description: Калькулятор та довідник з пошлин Modelo 790-052 та 790-062.
+---
+
+При переході з тимчасового захисту на стандартну резиденцію (EX-26 / EX-25) сплачуються державні мита.
+
+---
+
+## 🧮 Інтерактивний калькулятор пошлин
+
+<div class="tasa-box">
+  <label for="procedure" class="tasa-label">Ваша процедура легалізації:</label>
+  <select id="procedure" class="tasa-select" onchange="updateCalc()">
+    <option value="autonomo">💼 Перехід на Autónomo (EX-26)</option>
+    <option value="cuenta-ajena">🏢 Робота за контрактом / Cuenta Ajena (EX-26)</option>
+    <option value="menores">🧒 Резиденція для неповнолітніх дітей (EX-25)</option>
+  </select>
+
+  <div class="t<div class="tasa-card" id="card-062">
+      <div class="tasa-badge">Modelo 790-062</div>
+      <div class="tasa-name">Мито за роботу (Trabajo)</div>
+      <div class="tasa-price" id="res-062">€203.84</div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>{
