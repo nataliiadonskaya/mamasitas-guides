@@ -71,4 +71,10 @@ description: "Пошаговое руководство по модификац�
 
 ---
 
-> **Важно:** Все иностранные документы должны быть переведены присяжным переводчиком в Испании (*Traductor Jurado*) и при необходимости апостилированы. Проверить, требуется ли апостиль для документов вашей страны, можно на [официальном сайте Гаагской конвенции (HCCH)]([https://www.hcch.net/en/instruments/conventions/authorities1/?cid=41](https://www.hcch.net/en/instruments/conventions/authorities1/?cid=41)).
+:::note[Важно]
+
+Все иностранные документы должны быть переведены присяжным переводчиком в Испании (*Traductor Jurado*) и при необходимости апостилированы.  
+
+Проверить список стран и правила апостилирования можно на <a href="[https://www.hcch.net/en/instruments/conventions/authorities1/?cid=41](https://www.hcch.net/en/instruments/conventions/authorities1/?cid=41)" target="_blank" rel="noopener noreferrer">официальном сайте Гаагской конвенции (HCCH)</a>.
+
+:::
