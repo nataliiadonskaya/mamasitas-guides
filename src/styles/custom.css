@@ -153,3 +153,28 @@ nav.sidebar a[aria-current="page"],
 .sidebar-pane {
   background-color: #1a0b10 !important;
 }
+/* Стили для интерактивного калькулятора пошлин */
+.tasas-calculator, 
+select#procedure-select, 
+.calculator-box {
+  background-color: rgba(43, 22, 27, 0.85) !important;
+  border: 1px solid rgba(199, 161, 83, 0.4) !important;
+  border-radius: 10px !important;
+  padding: 1.2rem !important;
+  color: #f3e9eb !important;
+}
+
+/* Стили выпадающего списка в калькуляторе */
+select {
+  background-color: #1a0b10 !important;
+  color: #f3e9eb !important;
+  border: 1px solid rgba(199, 161, 83, 0.5) !important;
+  padding: 0.6rem 1rem !important;
+  border-radius: 8px !important;
+  font-size: 0.95rem;
+}
+
+select option {
+  background-color: #1a0b10;
+  color: #f3e9eb;
+}

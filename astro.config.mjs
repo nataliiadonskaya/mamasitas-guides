@@ -37,10 +37,8 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Справочник',
-          items: [
-            { label: 'Оплата пошлин (Tasas)', link: '/reference/tasas/' },
-          ],
+          label: 'Полезное', // Вместо "Справочник"
+          items: [{ label: 'Оплата пошлин (Tasas)', link: '/reference/tasas/' }],
         },
       ],
       customCss: ['./src/styles/custom.css'],
