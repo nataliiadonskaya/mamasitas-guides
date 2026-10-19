@@ -1,142 +1,45 @@
 ---
-title: "MamaSitas — База знаний"
+title: MamaSitas — База знаний / База знань
+description: Справочник по легализации в Испании / Довідник з легалізації в Іспанії
 template: splash
-hero:
-  title: ""
 ---
 
-<div class="main-card">
-  <div class="profile-block">
-    <div class="avatar-wrapper">
-      <img src="https://t.me/i/userpic/320/mamasitas_es.jpg" alt="MamaSitas" class="avatar" />
-    </div>
-    <h1 class="brand-title">MamaSitas</h1>
-    <p class="brand-tagline">База знаний по легализации в Испании</p>
+<div class="main-hero">
+  <div class="hero-avatar-wrapper">
+    <img src="/avatar.jpg" alt="MamaSitas Logo" class="hero-avatar" />
   </div>
+  
+  <h1 class="hero-title">MamaSitas</h1>
+  <p class="hero-subtitle">База знаний по легализации в Испании</p>
 
-  <div class="chat-options">
-    <a href="/guides/ex-26-autonomo/" class="chat-btn">
-      <span>💼 Переход на Autónomo (EX-26)</span>
-      <span class="arrow">→</span>
+  <div class="hero-links">
+    <a href="/guides/ex26-autonomo/" class="hero-card">
+      <span class="hero-icon">💼</span>
+      <span class="hero-text">Переход на Autónomo (EX-26)</span>
+      <span class="hero-arrow">→</span>
     </a>
-    <a href="/guides/ex-26-cuenta-ajena/" class="chat-btn">
-      <span>🏢 Работа по контракту (Cuenta Ajena)</span>
-      <span class="arrow">→</span>
+
+    <a href="/guides/ex26-cuenta-ajena/" class="hero-card">
+      <span class="hero-icon">🏢</span>
+      <span class="hero-text">Работа по контракту (Cuenta Ajena)</span>
+      <span class="hero-arrow">→</span>
     </a>
-    <a href="/guides/ex-25-menores/" class="chat-btn">
-      <span>🧒 Резиденция для детей (EX-25)</span>
-      <span class="arrow">→</span>
+
+    <a href="/guides/ex25-menores/" class="hero-card">
+      <span class="hero-icon">🧒</span>
+      <span class="hero-text">Резиденция для детей (EX-25)</span>
+      <span class="hero-arrow">→</span>
     </a>
-    <a href="/reference/tasas/" class="chat-btn">
-      <span>💳 Как оплатить пошлины (Tasas)</span>
-      <span class="arrow">→</span>
+
+    <a href="/reference/tasas/" class="hero-card">
+      <span class="hero-icon">💳</span>
+      <span class="hero-text">Калькулятор пошлин / Мита (Tasas)</span>
+      <span class="hero-arrow">→</span>
     </a>
-    
-    <a href="https://t.me/mamasitas_es" class="chat-btn primary" target="_blank" rel="noopener noreferrer">
-      <span>✈️ Telegram-канал MamaSitas</span>
+
+    <a href="https://t.me/mamasitas_es" target="_blank" rel="noopener noreferrer" class="hero-card hero-card-telegram">
+      <span class="hero-icon">✈️</span>
+      <span class="hero-text">Telegram-канал MamaSitas</span>
     </a>
   </div>
 </div>
-
-<style>{`
-  /* Полностью убираем верхнюю шапку, поиск, гамбургер-меню и футер */
-  header, .header, .hero-html, .hero, header.hero, footer, .pagination-single {
-    display: none !important;
-  }
-
-  /* Разворачиваем контент на весь экран без внутренних отступов шаблона */
-  .main-frame, .main-pane, main {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  .main-card {
-    --gold: #C7A153;
-    --gold-light: #E5C378;
-    --card-bg: rgba(43, 22, 27, 0.6);
-
-    max-width: 420px;
-    margin: 0 auto;
-    padding: 1rem 1rem 0.5rem 1rem;
-    text-align: center;
-  }
-
-  .profile-block {
-    margin-bottom: 1rem;
-  }
-
-  .avatar-wrapper {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 0.6rem auto;
-  }
-
-  .avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px solid var(--gold);
-    object-fit: cover;
-    box-shadow: 0 0 20px rgba(199, 161, 83, 0.35);
-    display: block;
-  }
-
-  .brand-title {
-    font-size: 1.8rem !important;
-    font-weight: 800 !important;
-    color: #FFFFFF !important;
-    margin: 0 0 0.2rem 0 !important;
-    line-height: 1.1;
-  }
-
-  .brand-tagline {
-    font-size: 0.88rem;
-    color: #D1C4C6;
-    margin: 0;
-    line-height: 1.2;
-  }
-
-  .chat-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .chat-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.85rem 1.1rem;
-    background: var(--card-bg);
-    color: #FFFFFF !important;
-    border: 1px solid rgba(199, 161, 83, 0.25);
-    border-radius: 14px;
-    text-decoration: none !important;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-  }
-
-  .chat-btn:hover {
-    background: rgba(199, 161, 83, 0.18);
-    border-color: var(--gold);
-  }
-
-  .chat-btn .arrow {
-    color: var(--gold);
-    font-size: 1rem;
-  }
-
-  .chat-btn.primary {
-    background: linear-gradient(135deg, var(--gold) 0%, #B08A3C 100%);
-    color: #111111 !important;
-    border: none;
-    margin-top: 0.3rem;
-    justify-content: center;
-    padding: 0.95rem;
-    border-radius: 14px;
-    font-weight: 700;
-    box-shadow: 0 4px 15px rgba(199, 161, 83, 0.3);
-  }
-`}</style>

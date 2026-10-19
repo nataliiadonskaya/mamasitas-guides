@@ -21,14 +21,9 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: 'Главное',
-          translations: { uk: 'Головне' },
+          label: 'Главное / Головне',
           items: [
-            { 
-              label: 'Старт / База знаний', 
-              translations: { uk: 'Старт / База знань' },
-              link: '/index' 
-            },
+            { label: 'Старт / База знаний', link: '/' },
           ],
         },
         {
