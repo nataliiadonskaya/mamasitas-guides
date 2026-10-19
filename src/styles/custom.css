@@ -103,3 +103,20 @@ header.header {
 	color: #c7a153;
 	font-weight: bold;
   }
+  /* Кастомный стиль для блоков note/важно под бордово-золотую гамму */
+.starlight-aside--note {
+	background-color: rgba(43, 22, 27, 0.9) !important;
+	border-color: #c7a153 !important;
+	border-left-color: #c7a153 !important;
+	color: #f3e9eb !important;
+  }
+  
+  .starlight-aside--note .starlight-aside__title {
+	color: #c7a153 !important;
+	font-weight: 700;
+  }
+  
+  .starlight-aside--note a {
+	color: #c7a153 !important;
+	text-decoration: underline;
+  }
