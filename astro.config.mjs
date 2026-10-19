@@ -27,7 +27,7 @@ export default defineConfig({
             { 
               label: 'Старт / База знаний', 
               translations: { uk: 'Старт / База знань' },
-              link: '/' 
+              link: '/index' 
             },
           ],
         },
