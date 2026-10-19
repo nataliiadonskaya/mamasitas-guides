@@ -1,145 +1,176 @@
 ---
-title: Tasas
-description: Справочник по Modelo 790-052, 790-062 и 790-012 — коды, суммы Orden PJC/617/2025 и правила заполнения.
+title: Оплата пошлин (Tasas)
+description: Калькулятор и инструкция по оплате пошлин Modelo 790-052 и 790-062 при смене статуса.
 ---
 
-:::note
-Суммы из [Orden PJC/617/2025](https://www.boe.es/buscar/doc.php?id=BOE-A-2025-12056) (BOE 16.06.2025). Закон о бюджете может индексировать их каждый год. **Сверяйте сумму в самой модели 790 в день оплаты.** Это не налоговая консультация.
-:::
-
-## Три модели: что есть что
-
-| Модель | Код | За что | Кто обычно платит |
-| --- | --- | --- | --- |
-| 790 | **052** | tramitación **residencia / estancia** (включая modificación) | иностранец (или родитель за ребёнка) |
-| 790 | **062** | tramitación **autorización de trabajo** (cuenta ajena / propia) | **empleador** (cuenta ajena) или работник (cuenta propia) |
-| 790 | **012** | **TIE** и сертификаты полиции | тот, кому делают карту |
-
-Ссылки:
-
-- [790-052](https://sede.administracionespublicas.gob.es/pagina/index/directorio/tasa052)
-- [790-062](https://sede.administracionespublicas.gob.es/pagina/index/directorio/tasa062)
-- [790-012](https://sede.policia.gob.es/Tasa790_012/ImpresoRellenar)
-
-## Правила, общие для всех 790
-
-1. **Provincia** = провинция офиса, куда идёт дело (не «прописка по желанию»).
-2. Плательщик: NIE/NIF, имя **как в документе**, полный адрес в Испании, телефон.
-3. Выбирайте epígrafe **по тексту**, не «на глаз по сумме». На портале иногда нумерация расходится с Orden — ориентир описание.
-4. После оплаты обязателен **NRC**. Без NRC офис оплату не видит.
-5. Срок добровольной оплаты: **10 рабочих дней** с подачи или с admisión a trámite. При **электронной** подаче residencia/trabajo Orden требует оплату **в момент** отправки (ст. 2.3).
-6. Копию с NRC кладите в пакет. Для EX-25 — в **один PDF** вместе с документами.
-
-:::caution[Практика MamaSitas по 062]
-Для перехода с временной защиты на **cuenta ajena (EX-26, ст. 191.3)** **Tasa 062 заранее не оплачиваем.** Платим **052 сразу**, **062 — только после requerimiento**. Подробности: [EX-26 Cuenta Ajena](/guides/ex-26-cuenta-ajena/).
-:::
+При переходе с временной защиты на стандартную резиденцию (EX-26 / EX-25) оплачиваются государственные пошлины.
 
 ---
 
-## Modelo 790 código 052 — residencia
+## 🧮 Интерактивный калькулятор пошлин
 
-Официальный заголовок на бланке: *Tasa por tramitación de autorizaciones administrativas en materia de inmigración y extranjería (residencia)*.
+Выберите вашу процедуру для расчета точных сумм и моделей:
 
-### Пункты, которые нужны чаще всего
+<div class="tasa-calc">
+  <label for="procedure-select" class="calc-label">Выберите вашу процедуру:</label>
+  <select id="procedure-select" class="calc-select" onchange="calculateTasa()">
+    <option value="autonomo">Переход на Autónomo (EX-26)</option>
+    <option value="cuenta-ajena">Работа по контракту / Cuenta Ajena (EX-26)</option>
+    <option value="menores">Резиденция для несовершеннолетних детей (EX-25)</option>
+  </select>
 
-| Epígrafe | Что это | € |
-| --- | --- | --- |
-| **2.1.1** | Residencia temporal **no lucrativa** (inicial) | 10,94 |
-| **2.1.2** | Residencia temporal por **reagrupación familiar** (inicial) | 10,94 |
-| **2.1.3** | Residencia y trabajo por cuenta ajena y/o propia (inicial, включая temporada) | 10,94 |
-| **2.1.5** | Residencia temporal de **menores extranjeros acompañados** → **EX-25, ст. 160** | **10,94** |
-| **2.2.1–2.2.4** | Renovación / prórroga residencia temporal (обычные) | 16,40 |
-| **2.3.1** | Residencia por **arraigo** | 38,28 |
-| **2.3.2.a)** | Circunstancias excepcionales (humanitarias и др., не жертвы) | 38,28 |
-| **2.3.2.b)** | Víctimas VG / trata и связанные случаи | 10,94 |
-| **2.5.1** | Estancia por estudios → residencia y trabajo | 10,94 |
-| **2.5.2** | **Modificación** residencia temporal → residencia y trabajo → **EX-26** | **10,94** |
-| **2.5.3** | Modificaciones по ст. 192 | 10,94 |
-| **2.6** | Larga duración nacional / UE | 21,87 |
+  <div class="calc-result" id="calc-result">
+    <div class="res-card">
+      <div class="res-title">Modelo 790 Code 052</div>
+      <div class="res-desc">Пошлина за разрешение на проживание ( Tramitación de autorización de residencia )</div>
+      <div class="res-amount" id="amount-052">€10.94</div>
+    </div>
+    <div class="res-card" id="card-062">
+      <div class="res-title">Modelo 790 Code 062</div>
+      <div class="res-desc">Пошлина за разрешение на работу ( Tramitación de autorización de trabajo )</div>
+      <div class="res-amount" id="amount-062">€203.84</div>
+    </div>
+  </div>
+</div>
 
-### Как заполнить 052 на наши процедуры
+<script>{`
+  function calculateTasa() {
+    const val = document.getElementById('procedure-select').value;
+    const amount052 = document.getElementById('amount-052');
+    const amount062 = document.getElementById('amount-062');
+    const card062 = document.getElementById('card-062');
 
-**EX-26 (cuenta ajena, ст. 191.3)**
-
-- Autoliquidación / epígrafe: **2.5.2**
-- Текст: modificación de la autorización de residencia temporal a autorización de residencia y trabajo
-- Сумма: **10,94 €**
-- Sujeto pasivo: **работник** (ваш NIE)
-- Приложить к EX-26 сразу
-
-**EX-25 (ребёнок, ст. 160)**
-
-- Epígrafe: **2.1.5**
-- Текст: residencia temporal de menores extranjeros acompañados
-- Сумма: **10,94 €**
-- Не путать с **2.1.2** (reagrupación) — другой маршрут
-- Justificante вшить в объединённый PDF
-
----
-
-## Modelo 790 código 062 — trabajo
-
-Это **не** «ещё одна 052». 062 — плата за **разрешение на работу**. При cuenta ajena субъект — **работодатель**; он **не вправе** перекладывать эту tasa на работника (ст. 3.2 Orden PJC/617/2025).
-
-### Ключевые epígrafes
-
-| Epígrafe | Что это | € |
-| --- | --- | --- |
-| **3.2.1.a)** | Trabajo inicial cuenta ajena, зарплата ниже 2 SMI | 203,84 |
-| **3.2.1.b)** | Trabajo inicial cuenta ajena, зарплата 2 SMI и выше | 407,71 |
-| **3.2.2** | Trabajo для **renovadas** residencia y trabajo cuenta ajena → типичный код для **EX-26 ст. 191.3** (Hoja 55) | **81,54** |
-| **3.3.1** | Trabajo inicial **cuenta propia** | 203,84 |
-| **3.3.2** | Trabajo renovado cuenta propia | 81,54 |
-| **3.4.1** | Temporada (inicial) | 10,94 |
-| **3.4.2** | Temporada (renovación) | 16,40 |
-
-### Заполнение 062 (когда уже есть requerimiento)
-
-1. Откройте 790-062 **после** письма офиса, не раньше.
-2. Provincia — как в expediente.
-3. **Datos del sujeto pasivo** = компания / autónomo‑empleador (CIF/NIF).
-4. Блок **trabajador extranjero** = NIE и имя работника.
-5. Epígrafe — как в requerimiento; если не указан, для перехода PT → cuenta ajena по Hoja 55 это **3.2.2 (81,54 €)**, не 3.2.1 (203,84 / 407,71).
-6. Número de expediente, если поле есть.
-7. Оплата от имени работодателя. PDF с NRC отправить **ответом на requerimiento**.
-
-**Освобождения 062 (ст. 3.3 Orden):** для **начального** trabajo por cuenta **propia** — iberoamericanos, filipinos, andorranos, ecuatoguineanos, sefardíes, дети/внуки испанца de origen, рождённые в Испании. На **cuenta ajena / EX-26** это обычно **не** распространяется.
+    if (val === 'autonomo') {
+      amount052.innerText = '€10.94';
+      amount062.innerText = '€203.84';
+      card062.style.display = 'block';
+    } else if (val === 'cuenta-ajena') {
+      amount052.innerText = '€10.94';
+      amount062.innerText = 'Оплачивает работодатель (€203.84)';
+      card062.style.display = 'block';
+    } else if (val === 'menores') {
+      amount052.innerText = '€10.94';
+      card062.style.display = 'none';
+    }
+  }
+`}</script>
 
 ---
 
-## Modelo 790 código 012 — TIE (полиция)
+## 📌 Заполнение и объединение квитанций
 
-Платится при **EX-17** в comisaría, не в extranjería. Портал: [sede Policía 790-012](https://sede.policia.gob.es/Tasa790_012/ImpresoRellenar).
+При подаче документов через платформу Mercurio система требует загрузить подтверждение оплаты **в едином PDF-файле**.
 
-| Код в Orden | Что это | € |
-| --- | --- | --- |
-| **4.1** | TIE residencia temporal familiares de español | 12,00 |
-| **4.2** | TIE **первой** concesión residencia temporal / estancia | **16,08** |
-| **4.3** | TIE **renovación** residencia temporal / prórroga estancia | 19,30 |
-| **4.4** | TIE жертв VG / trata | 16,08 |
-| **4.5** | TIE **larga duración** / larga duración-UE | 21,87 |
-| **4.6** | Certificado de registro UE / tarjeta familiar UE / BREXIT | 12,00 |
-| **4.7** | TIE меньших под tutela публичной организации | 0 |
-
-После **EX-26** и **EX-25** первая пластиковая карта обычно идёт как **4.2 — 16,08 €** (первая concesión residencia temporal). Если офис/полиция квалифицирует иначе — берите код с cita / листовки comisaría.
-
-На бланке 012 выберите описание, совпадающее с вашей ситуацией, укажите NIE и назначенную comisaría.
+1. Оплатите квитанции в банкомате или через онлайн-банкинг (BBVA, CaixaBank, Santander).
+2. Сохраните чек с указанием **NRC** (Número de Referencia Completo).
+3. Объедините бланки Modelo 790 и чеки об оплате в один PDF-документ.
 
 ---
 
-## Шпаргалка по гайдам MamaSitas
+<div class="paid-service-card">
+  <div class="card-badge">PREMIUM УСЛУГА</div>
+  <h3>Нужна помощь с правильным заполнением и сборкой PDF?</h3>
+  <p>Ошибки в кодах пошлин или некорректно объединенные квитанции приводят к приостановке рассмотрения дела (Requerimiento).</p>
+  <ul>
+    <li>Заполним правильные реквизиты под ваш регион</li>
+    <li>Проверим корректность чеков и NRC-кодов</li>
+    <li>Сформируем единый готовый PDF-пакет для загрузки в Mercurio</li>
+  </ul>
+  <a href="https://t.me/mamasitas_es" target="_blank" class="service-btn">
+    💬 Заказать подготовку пошлин в Telegram
+  </a>
+</div>
 
-| Процедура | 052 | 062 | 012 |
-| --- | --- | --- | --- |
-| [EX-26 cuenta ajena](/guides/ex-26-cuenta-ajena/) (ст. 191.3, стаж ≥ 1 года) | **2.5.2 → 10,94 € сразу** | **3.2.2 → 81,54 € только по requerimiento** | после концессии, обычно **16,08 €** |
-| [EX-25 menores](/guides/ex-25-menores/) (ст. 160) | **2.1.5 → 10,94 € сразу**, justificante в общем PDF | нет | после концессии, обычно **16,08 €** |
-
-## Частые ошибки
-
-- 052 **2.1.3** вместо **2.5.2** на модификации EX-26.
-- 052 **2.1.2** вместо **2.1.5** на ребёнка ст. 160.
-- 062 **3.2.1** (203,84 €) вместо **3.2.2** (81,54 €) на переход «больше года».
-- 062 оплачена работником «на всякий случай» до requerimiento.
-- Provincia 790 не совпадает с офисом дела.
-- В пакет попал бланк **без NRC**.
-- 012 оплачена как renovación (**19,30 €**), хотя это первая TIE после новой концессии.
+<style>{`
+  .tasa-calc {
+    background: rgba(43, 22, 27, 0.4);
+    border: 1px solid rgba(199, 161, 83, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .calc-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  .calc-select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    background: #1A0D10;
+    color: #fff;
+    border: 1px solid #C7A153;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .calc-result {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .res-card {
+    background: rgba(199, 161, 83, 0.1);
+    border: 1px solid rgba(199, 161, 83, 0.25);
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  .res-title {
+    font-weight: 700;
+    color: #C7A153;
+    font-size: 1.1rem;
+  }
+  .res-desc {
+    font-size: 0.82rem;
+    color: #ccc;
+    margin: 0.4rem 0;
+  }
+  .res-amount {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #fff;
+  }
+  
+  .paid-service-card {
+    background: linear-gradient(135deg, rgba(43, 22, 27, 0.9) 0%, rgba(20, 10, 12, 0.95) 100%);
+    border: 2px solid #C7A153;
+    border-radius: 20px;
+    padding: 1.8rem;
+    margin-top: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .card-badge {
+    display: inline-block;
+    background: #C7A153;
+    color: #111;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+  }
+  .paid-service-card h3 {
+    margin-top: 0 !important;
+    color: #fff !important;
+  }
+  .paid-service-card ul {
+    padding-left: 1.2rem;
+    color: #ddd;
+    margin: 1rem 0 1.5rem 0;
+  }
+  .service-btn {
+    display: block;
+    text-align: center;
+    background: #C7A153;
+    color: #111 !important;
+    font-weight: 700;
+    padding: 0.9rem;
+    border-radius: 12px;
+    text-decoration: none !important;
+    transition: transform 0.2s;
+  }
+  .service-btn:hover {
+    transform: translateY(-2px);
+  }
+`}</style>
