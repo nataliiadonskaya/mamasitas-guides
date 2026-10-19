@@ -33,9 +33,7 @@ export default defineConfig({
         },
         {
           label: 'Детям',
-          items    },
-        {
-          label: 'Справочник',
+          items: [{ label: 'EX-25 Me      label: 'Справочник',
           items: [{ label: 'Оплата пошлин (Tasas)', link: '/reference/tasas/' }],
         },
       ],
