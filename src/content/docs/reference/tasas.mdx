@@ -76,6 +76,7 @@ description: Калькулятор и справочник по пошлина�
 :::
 
 <style>{`
+  /* Стилизация калькулятора */
   .tasa-box {
     background: rgba(43, 22, 27, 0.7);
     border: 1px solid rgba(199, 161, 83, 0.35);
@@ -140,5 +141,24 @@ description: Калькулятор и справочник по пошлина�
     font-size: 1.35rem;
     font-weight: 800;
     color: #FFFFFF;
+  }
+
+  /* Перекрашиваем синюю системную плашку в фирменное золото и винный */
+  .starlight-aside--note, aside[aria-label="Note"], .sl-aside--note {
+    background: rgba(43, 22, 27, 0.85) !important;
+    border-color: #C7A153 !important;
+    color: #FFFFFF !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .starlight-aside--note .starlight-aside__title, aside[aria-label="Note"] p.starlight-aside__title {
+    color: #E5C378 !important;
+  }
+
+  .starlight-aside--note a {
+    color: #E5C378 !important;
+    font-weight: bold;
+    text-decoration: underline !important;
   }
 `}</style>
