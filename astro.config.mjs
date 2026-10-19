@@ -30,15 +30,15 @@ export default defineConfig({
           label: 'Временная защита (Переход)',
           translations: { uk: 'Тимчасовий захист (Перехід)' },
           items: [
-            { label: 'EX-26 Autónomo', link: '/guides/ex26-autonomo/' },
-            { label: 'EX-26 Cuenta Ajena', link: '/guides/ex26-cuenta-ajena/' },
+            { label: 'EX-26 Autónomo', link: '/guides/ex-26-autonomo/' },
+            { label: 'EX-26 Cuenta Ajena', link: '/guides/ex-26-cuenta-ajena/' },
           ],
         },
         {
           label: 'Детям',
           translations: { uk: 'Дітям' },
           items: [
-            { label: 'EX-25 Menores', link: '/guides/ex25-menores/' },
+            { label: 'EX-25 Menores', link: '/guides/ex-25-menores/' },
           ],
         },
         {
