@@ -178,3 +178,75 @@ select option {
   background-color: #1a0b10;
   color: #f3e9eb;
 }
+/* Стили для интерактивного калькулятора пошлин */
+.tasa-box {
+	background-color: rgba(43, 22, 27, 0.85) !important;
+	border: 1px solid rgba(199, 161, 83, 0.4) !important;
+	border-radius: 12px !important;
+	padding: 1.5rem !important;
+	margin: 1.5rem 0 !important;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .tasa-label {
+	color: #c7a153 !important;
+	font-weight: 600 !important;
+	display: block;
+	margin-bottom: 0.5rem;
+  }
+  
+  .tasa-select {
+	width: 100% !important;
+	background-color: #1a0b10 !important;
+	color: #f3e9eb !important;
+	border: 1px solid rgba(199, 161, 83, 0.5) !important;
+	padding: 0.75rem 1rem !important;
+	border-radius: 8px !important;
+	font-size: 1rem !important;
+	margin-bottom: 1.2rem;
+  }
+  
+  .tasa-select option {
+	background-color: #1a0b10;
+	color: #f3e9eb;
+  }
+  
+  .tasa-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1rem;
+	margin-bottom: 1rem;
+  }
+  
+  .tasa-card {
+	background: rgba(26, 11, 16, 0.9) !important;
+	border: 1px solid rgba(199, 161, 83, 0.25) !important;
+	border-radius: 8px !important;
+	padding: 1rem !important;
+  }
+  
+  .tasa-badge {
+	color: #c7a153 !important;
+	font-weight: 700;
+	font-size: 0.85rem;
+	margin-bottom: 0.3rem;
+  }
+  
+  .tasa-name {
+	color: #d1c4c6 !important;
+	font-size: 0.9rem;
+	margin-bottom: 0.5rem;
+  }
+  
+  .tasa-price {
+	color: #ffffff !important;
+	font-size: 1.4rem;
+	font-weight: 800;
+  }
+  
+  .tasa-disclaimer {
+	color: #a8989a !important;
+	font-size: 0.85rem;
+	margin-top: 1rem;
+	line-height: 1.4;
+  }
