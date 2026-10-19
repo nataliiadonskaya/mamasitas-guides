@@ -3,6 +3,8 @@ title: Оплата пошлин (Tasas)
 description: Калькулятор и справочник по пошлинам Modelo 790-052 и 790-062.
 ---
 
+import TasaCalculator from '../../../src/components/TasaCalculator.astro';
+
 При переходе с временной защиты на стандартную резиденцию (EX-26 / EX-25) оплачиваются государственные пошлины.
 
 ---
@@ -12,8 +14,6 @@ description: Калькулятор и справочник по пошлина�
 :::tip[Выберите вашу процедуру]
 Быстрый расчет суммы к оплате и необходимых бланков
 :::
-
-import TasaCalculator from '../../components/TasaCalculator.astro';
 
 <TasaCalculator />
 
