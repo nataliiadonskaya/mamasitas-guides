@@ -1,95 +1,19 @@
-/* Custom Styles for MamaSitas */
+/* Насыщенный бордовый фон для всей страницы */
+:root,
+body,
+[data-has-hero],
+.page,
+main {
+  background-color: #1c0a10 !important;
+  background-image: none !important;
+}
 
-.main-hero {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	padding: 1.5rem 1rem;
-	max-width: 520px;
-	margin: 0 auto;
-  }
-  
-  .hero-avatar-wrapper {
-	margin-bottom: 0.8rem;
-  }
-  
-  .hero-avatar {
-	width: 110px;
-	height: 110px;
-	border-radius: 50%;
-	object-fit: cover;
-	border: 2px solid #c7a153;
-	box-shadow: 0 0 20px rgba(199, 161, 83, 0.35);
-  }
-  
-  .hero-title {
-	font-size: 2.2rem;
-	font-weight: 800;
-	color: #ffffff;
-	margin: 0.4rem 0 0.2rem 0;
-  }
-  
-  .hero-subtitle {
-	font-size: 0.95rem;
-	color: #d1c4c6;
-	margin-bottom: 1.8rem;
-  }
-  
-  .hero-links {
-	display: flex;
-	flex-direction: column;
-	gap: 0.8rem;
-	width: 100%;
-  }
-  
-  .hero-card {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0.85rem 1.2rem;
-	background: rgba(43, 22, 27, 0.6);
-	border: 1px solid rgba(199, 161, 83, 0.35);
-	border-radius: 12px;
-	color: #ffffff !important;
-	text-decoration: none !important;
-	font-size: 0.95rem;
-	font-weight: 600;
-	transition: all 0.2s ease;
-  }
-  
-  .hero-card:hover {
-	border-color: #c7a153;
-	background: rgba(199, 161, 83, 0.15);
-  }
-  
-  .hero-card-telegram {
-	background: #c7a153 !important;
-	color: #1a0d10 !important;
-	justify-content: center;
-	font-weight: 700;
-	margin-top: 0.4rem;
-	box-shadow: 0 4px 15px rgba(199, 161, 83, 0.3);
-  }
-  
-  .hero-card-telegram:hover {
-	background: #e5c378 !important;
-  }
-  
-  .hero-icon {
-	margin-right: 0.6rem;
-  }
-  
-  .hero-text {
-	flex-grow: 1;
-	text-align: left;
-  }
-  
-  .hero-card-telegram .hero-text {
-	text-align: center;
-  }
-  
-  .hero-arrow {
-	color: #c7a153;
-	font-weight: bold;
-  }
+/* Скрываем стандартную верхнюю шапку Starlight (поиск, темы) */
+header.header {
+  display: none !important;
+}
+
+/* Убираем верхние отступы, которые оставались от шапки */
+.main-frame {
+  padding-top: 0 !important;
+}
