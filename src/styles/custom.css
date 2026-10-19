@@ -1,110 +1,86 @@
-:root,
-:root[data-theme='light'] {
-	/* Brand */
-	--ms-marsala: #2a0815;
-	--ms-marsala-deep: #1f050f;
-	--ms-gold: #d4af37;
-	--ms-gold-light: #e5c158;
-	--ms-cream: #fafafa;
 
-	--sl-color-white: var(--ms-cream);
-	--sl-color-gray-1: #f3ecee;
-	--sl-color-gray-2: var(--ms-cream);
-	--sl-color-gray-3: #c9b4b8;
-	--sl-color-gray-4: #8a5a66;
-	--sl-color-gray-5: #4a1a28;
-	--sl-color-gray-6: var(--ms-marsala);
-	--sl-color-gray-7: var(--ms-marsala-deep);
-	--sl-color-black: var(--ms-marsala-deep);
+/* MamaSitas: tasas calculator */
 
-	--sl-color-accent-low: #4a3510;
-	--sl-color-accent: var(--ms-gold);
-	--sl-color-accent-high: var(--ms-gold-light);
-
-	--sl-color-text: var(--ms-cream);
-	--sl-color-text-accent: var(--ms-gold-light);
-	--sl-color-text-invert: var(--ms-marsala-deep);
-	--sl-color-bg: var(--ms-marsala);
-	--sl-color-bg-nav: var(--ms-marsala-deep);
-	--sl-color-bg-sidebar: var(--ms-marsala-deep);
-	--sl-color-bg-inline-code: #3d1220;
-	--sl-color-bg-accent: var(--ms-gold);
-	--sl-color-hairline-light: color-mix(in srgb, var(--ms-gold) 45%, transparent);
-	--sl-color-hairline: color-mix(in srgb, var(--ms-gold) 55%, var(--ms-marsala-deep));
-	--sl-color-hairline-shade: var(--ms-marsala-deep);
-}
-
-.site-title {
-	color: var(--ms-gold-light);
-}
-
-.site-title::before {
-	content: '';
+.tasa-box {
+	background: rgba(43, 22, 27, 0.7);
+	border: 1px solid rgba(199, 161, 83, 0.35);
+	border-radius: 18px;
+	padding: 1.2rem;
+	margin: 1.5rem 0;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .tasa-label {
+	display: block;
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: #e5c378;
+	margin-bottom: 0.6rem;
+  }
+  
+  .tasa-select {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.85rem 1rem;
+	border-radius: 12px;
+	background: #1a0d10;
+	color: #fff;
+	border: 1px solid #c7a153;
+	font-size: 1rem;
+	margin-bottom: 1.2rem;
+	cursor: pointer;
+  }
+  
+  .tasa-select:focus-visible {
+	outline: 2px solid #e5c378;
+	outline-offset: 3px;
+  }
+  
+  .tasa-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+	gap: 0.85rem;
+  }
+  
+  .tasa-card {
+	background: rgba(199, 161, 83, 0.08);
+	border: 1px solid rgba(199, 161, 83, 0.25);
+	border-radius: 14px;
+	padding: 1rem;
+  }
+  
+  .tasa-card[hidden] {
+	display: none !important;
+  }
+  
+  .tasa-badge {
 	display: inline-block;
-	width: 1.15em;
-	height: 1.15em;
-	margin-inline-end: 0.45rem;
-	flex-shrink: 0;
-	background-color: var(--ms-gold-light);
-	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 8.5 7.2 12 12 4.5 16.8 12 21 8.5 19.5 18H4.5zM5 19.5h14V21H5z'/%3E%3C/svg%3E")
-		center / contain no-repeat;
-	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 8.5 7.2 12 12 4.5 16.8 12 21 8.5 19.5 18H4.5zM5 19.5h14V21H5z'/%3E%3C/svg%3E")
-		center / contain no-repeat;
-}
-
-.social-icons a {
-	color: var(--ms-gold);
-}
-
-.social-icons a:hover {
-	color: var(--ms-gold-light);
-}
-
-a {
-	color: var(--ms-gold-light);
-}
-
-.sidebar-content a[aria-current='page'],
-.sidebar-content [aria-current='page'] {
-	color: var(--ms-marsala-deep);
-	background-color: var(--ms-gold);
-}
-
-.sl-link-button.primary,
-.hero .sl-link-button.primary {
-	background-color: var(--ms-gold);
-	border-color: var(--ms-gold);
-	color: var(--ms-marsala-deep);
-}
-
-.sl-link-button.primary:hover,
-.hero .sl-link-button.primary:hover {
-	background-color: var(--ms-gold-light);
-	border-color: var(--ms-gold-light);
-	color: var(--ms-marsala-deep);
-}
-
-.sl-link-button.minimal,
-.hero .sl-link-button.minimal {
-	color: var(--ms-gold-light);
-	border-color: var(--ms-gold);
-}
-
-.starlight-aside,
-.card,
-.pagination-links a {
-	border-color: var(--ms-gold);
-}
-
-.card {
-	background-color: color-mix(in srgb, var(--ms-marsala-deep) 70%, transparent);
-}
-
-header.header {
-	border-bottom: 1px solid var(--ms-gold);
-}
-
-starlight-menu-button button,
-.theme-toggle {
-	color: var(--ms-gold-light);
-}
+	font-size: 0.78rem;
+	font-weight: 700;
+	color: #c7a153;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-bottom: 0.3rem;
+  }
+  
+  .tasa-name {
+	font-size: 0.85rem;
+	color: #d1c4c6;
+	margin-bottom: 0.6rem;
+	line-height: 1.5;
+  }
+  
+  .tasa-price {
+	font-size: 1.35rem;
+	font-weight: 800;
+	color: var(--sl-color-text, #fff);
+	overflow-wrap: anywhere;
+  }
+  
+  .tasa-disclaimer {
+	margin-top: 1rem;
+	font-size: 0.85rem;
+	opacity: 0.85;
+	line-height: 1.6;
+  }
+  

@@ -1,0 +1,37 @@
+(() => {
+  function initTasasCalculator() {
+    const procedure = document.getElementById('procedure');
+    const res052 = document.getElementById('res-052');
+    const res062 = document.getElementById('res-062');
+    const card062 = document.getElementBre.value) {
+        case 'autonomo':
+          res052.textContent = '€10,94';
+          res062.textContent = '€203,84';
+          card062.hidden = false;
+          break;
+
+        case 'cuenta-ajena':
+          res052.textContent = '€10,94';
+          res062.textContent = '€203,84';
+          card062.hidden = false;
+          break;
+
+        case 'menores':
+          res052.textContent = '€10,94';
+          card062.hidden = true;
+          break;
+      }
+    }
+
+    procedure.addEventListener('change', updateCalc);
+    updateCalc();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTasasCalculator, {
+      once: true
+    });
+  } else {
+    initTasasCalculator();
+  }
+})();

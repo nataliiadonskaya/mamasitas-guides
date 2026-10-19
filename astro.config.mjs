@@ -11,24 +11,19 @@ export default defineConfig({
           label: 'Русский',
           lang: 'ru',
         },
-        uk: {
-          label: 'Українська',
-          lang: 'uk',
-        },
       },
       social: [
         { icon: 'telegram', label: 'Telegram', href: 'https://t.me/mamasitas_es' },
       ],
       sidebar: [
         {
-          label: 'Главное / Головне',
+          label: 'Главное',
           items: [
             { label: 'Старт / База знаний', link: '/' },
           ],
         },
         {
           label: 'Временная защита (Переход)',
-          translations: { uk: 'Тимчасовий захист (Перехід)' },
           items: [
             { label: 'EX-26 Autónomo', link: '/guides/ex-26-autonomo/' },
             { label: 'EX-26 Cuenta Ajena', link: '/guides/ex-26-cuenta-ajena/' },
@@ -36,20 +31,14 @@ export default defineConfig({
         },
         {
           label: 'Детям',
-          translations: { uk: 'Дітям' },
           items: [
             { label: 'EX-25 Menores', link: '/guides/ex-25-menores/' },
           ],
         },
         {
           label: 'Справочник',
-          translations: { uk: 'Довідник' },
           items: [
-            { 
-              label: 'Оплата пошлин (Tasas)', 
-              translations: { uk: 'Оплата мита (Tasas)' },
-              link: '/reference/tasas/' 
-            },
+            { label: 'Оплата пошлин (Tasas)', link: '/reference/tasas/' },
           ],
         },
       ],
