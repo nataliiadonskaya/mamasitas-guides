@@ -9,9 +9,8 @@
   --sl-color-hairline: #3a1e28;
 }
 
-/* Жестко убираем шапку контента и пагинацию только на главной странице-сплеше */
-main .sl-container:not(:has(.hero)) + footer,
-[data-template="splash"] .content-panel > header,
-[data-template="splash"] footer.sl-flex {
+/* Полностью скрываем шапку страницы и нижнюю пагинацию на главной (splash) */
+div.content-panel > header,
+footer.sl-flex {
   display: none !important;
 }
