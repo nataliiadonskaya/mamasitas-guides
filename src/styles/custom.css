@@ -1,4 +1,3 @@
-@import "@astrojs/starlight/style";
 
 :root {
   --sl-color-accent: #c7a153;
@@ -37,7 +36,12 @@ main,
 }
 
 /* Главный блок */
-.main-her 0 auto;
+.main-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 480px;
+  margin: 0 auto;
   padding: 1.5rem 1rem;
   text-align: center;
 }
@@ -117,4 +121,9 @@ main,
 .hero-arrow {
   color: #c7a153;
   font-weight: bold;
+}
+
+/* Скрываем нижнюю навигацию только на главной MamaSitas */
+body:has(.main-hero) footer .pagination-links {
+  display: none !important;
 }
