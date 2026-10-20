@@ -1,4 +1,3 @@
-cat << 'EOF' > src/styles/custom.css
 @import "@astrojs/starlight/style";
 
 :root {
@@ -10,11 +9,9 @@ cat << 'EOF' > src/styles/custom.css
   --sl-color-hairline: #3a1e28;
 }
 
-/* Безупречно скрываем заголовки и нижнюю пагинацию на главной странице-сплеше */
+/* Жестко убираем шапку контента и пагинацию только на главной странице-сплеше */
+main .sl-container:not(:has(.hero)) + footer,
 [data-template="splash"] .content-panel > header,
 [data-template="splash"] footer.sl-flex {
   display: none !important;
 }
-EOF
-
-git add . && git commit -m "fix splash css selector for header and footer" && git push origin main
