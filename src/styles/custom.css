@@ -9,13 +9,15 @@
   --sl-color-hairline: #3a1e28;
 }
 
-/* Полностью скрываем верхнюю панель, пустые заголовки и футер НА ГЛАВНОЙ */
+/* Полностью скрываем шапку, пустые заголовки и пагинацию НА ГЛАВНОЙ */
 body:has(a[href="/guides/ex-26-autonomo/"]) header.header,
 body:has(a[href="/guides/ex-26-autonomo/"]) .site-title,
 body:has(a[href="/guides/ex-26-autonomo/"]) .content-panel > header,
 body:has(a[href="/guides/ex-26-autonomo/"]) footer.sl-flex,
 body:has(a[href="/guides/ex-26-autonomo/"]) .pagination-links,
-body:has(a[href="/guides/ex-26-autonomo/"]) .page-actions {
+body:has(a[href="/guides/ex-26-autonomo/"]) .page-actions,
+body:has(a[href="/guides/ex-26-autonomo/"]) .right-sidebar,
+body:has(a[href="/guides/ex-26-autonomo/"]) astro-island[component-url*="pagination"] {
   display: none !important;
 }
 
