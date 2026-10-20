@@ -1,6 +1,9 @@
 ---
 import Default from '@astrojs/starlight/components/Pagination.astro';
-const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+
+// Проверяем все возможные варианты путей для главной страницы
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/' || pathname === '' || pathname === '/index';
 ---
 
 {isHome ? null : <Default><slot /></Default>}
