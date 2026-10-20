@@ -9,7 +9,8 @@
   --sl-color-hairline: #3a1e28;
 }
 
-/* Скрываем заголовок и пагинацию только на главной странице через класс-маркер */
+/* Убираем шапку и заголовок только на главной странице-сплеше */
+html:has(body.is-splash) .content-panel > header,
 body.is-splash .content-panel > header,
 body.is-splash footer.sl-flex {
   display: none !important;
