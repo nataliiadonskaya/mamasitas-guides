@@ -9,15 +9,16 @@
   --sl-color-hairline: #3a1e28;
 }
 
-/* Скрываем верхнюю панель Starlight и убираем отступы */
-header.header,
-.site-title {
+/* Полностью скрываем шапку и отступы НА ГЛАВНОЙ СТРАНИЦЕ */
+body:has(a[href="/guides/ex-26-autonomo/"]) header.header,
+body:has(a[href="/guides/ex-26-autonomo/"]) .site-title,
+body:has(a[href="/guides/ex-26-autonomo/"]) nav.site-nav {
   display: none !important;
 }
 
-.main-frame,
-.content-panel,
-.sl-container {
+body:has(a[href="/guides/ex-26-autonomo/"]) .main-frame,
+body:has(a[href="/guides/ex-26-autonomo/"]) .content-panel,
+body:has(a[href="/guides/ex-26-autonomo/"]) .sl-container {
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
@@ -31,13 +32,7 @@ main,
 .page,
 .main-pane {
   background-color: #1a0b10 !important;
-  background-image: none !important;
-}
-
-/* Главный блок */
-.main-hero {
-  display: flex;
-  flex-direction: column;
+  background-image: none !importan: column;
   align-items: center;
   max-width: 480px;
   margin: 0 auto;
@@ -48,7 +43,10 @@ main,
 /* Аватар-герб */
 .hero-avatar {
   width: 120px !important;
-  height: 120px !im 2px solid #c7a153;
+  height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+  border: 2px solid #c7a153;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0 25px rgba(199, 161, 83, 0.4);
@@ -119,9 +117,9 @@ main,
   font-weight: bold;
 }
 
-/* Жестко гасим стандартный футер, пагинацию и блок редактирования страницы именно на главной */
-footer.sl-flex,
-.pagination-links,
-.page-actions {
+/* Скрываем футер и пагинацию только на главной */
+body:has(a[href="/guides/ex-26-autonomo/"]) footer.sl-flex,
+body:has(a[href="/guides/ex-26-autonomo/"]) .pagination-links,
+body:has(a[href="/guides/ex-26-autonomo/"]) .page-actions {
   display: none !important;
 }
