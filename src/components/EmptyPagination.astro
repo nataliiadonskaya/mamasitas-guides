@@ -1,0 +1,6 @@
+---
+import Default from '@astrojs/starlight/components/Pagination.astro';
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+---
+
+{isHome ? null : <Default><slot /></Default>}

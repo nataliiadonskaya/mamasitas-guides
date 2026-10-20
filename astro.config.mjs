@@ -1,3 +1,4 @@
+// @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
@@ -5,43 +6,19 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'MamaSitas',
-      defaultLocale: 'root',
-      locales: {
-        root: {
-          label: 'Русский',
-          lang: 'ru',
-        },
+      customCss: ['./src/styles/custom.css'],
+      components: {
+        Pagination: './src/components/EmptyPagination.astro',
       },
-      tableOfContents: false,
-      social: [
-        { icon: 'telegram', label: 'Telegram', href: 'https://t.me/mamasitas_es' },
-      ],
       sidebar: [
         {
-          label: 'Главное',
-          items: [
-            { label: 'Старт / База знаний', link: '/' },
-          ],
-        },
-        {
-          label: 'Временная защита (Переход)',
+          label: 'Руководства',
           items: [
             { label: 'EX-26 Autónomo', link: '/guides/ex-26-autonomo/' },
             { label: 'EX-26 Cuenta Ajena', link: '/guides/ex-26-cuenta-ajena/' },
-          ],
-        },
-        {
-          label: 'Детям',
-          items: [
             { label: 'EX-25 Menores', link: '/guides/ex-25-menores/' },
-          ],
-        },
-        {
-          label: 'Полезное', // Вместо "Справочник"
-          items: [{ label: 'Оплата пошлин (Tasas)', link: '/reference/tasas/' }],
-        },
+            { label: 'Калькулятор пошлин', link: '/reference/tasas
       ],
-      customCss: ['./src/styles/custom.css'],
     }),
   ],
 });
