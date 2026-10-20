@@ -9,14 +9,11 @@
   --sl-color-hairline: #3a1e28;
 }
 
-/* Жестко гасим шапку и пагинацию ИСКЛЮЧИТЕЛЬНО на главной странице (где есть герб/класс main-hero) */
+/* Скрываем шапку и нижнюю пагинацию ТОЛЬКО на главной странице (где есть класс main-hero) */
 body:has(.main-hero) header.header,
 body:has(.main-hero) .site-title,
-body:has(.main-hero) .mobile-preferences,
-body:has(.main-hero) footer.sl-flex,
 body:has(.main-hero) .pagination-links,
-body:has(.main-hero) .page-actions,
-body:has(.main-hero) .right-sidebar {
+body:has(.main-hero) footer.sl-flex {
   display: none !important;
 }
 
@@ -25,8 +22,6 @@ body:has(.main-hero) .content-panel,
 body:has(.main-hero) .sl-container {
   padding-top: 0 !important;
   margin-top: 0 !important;
-  background-color: #1a0b10 !important;
-  border: none !important;
 }
 
 /* Бордовый фон на всю страницу */
@@ -42,12 +37,7 @@ main,
 }
 
 /* Главный блок */
-.main-hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 480px;
-  margin: 0 auto;
+.main-her 0 auto;
   padding: 1.5rem 1rem;
   text-align: center;
 }
