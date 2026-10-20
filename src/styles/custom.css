@@ -9,8 +9,8 @@
   --sl-color-hairline: #3a1e28;
 }
 
-/* Полностью скрываем шапку страницы и нижнюю пагинацию на главной (splash) */
-div.content-panel > header,
-footer.sl-flex {
+/* Скрываем заголовок и пагинацию только на главной странице через класс-маркер */
+body.is-splash .content-panel > header,
+body.is-splash footer.sl-flex {
   display: none !important;
 }
