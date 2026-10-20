@@ -7,9 +7,6 @@ export default defineConfig({
     starlight({
       title: 'MamaSitas',
       customCss: ['./src/styles/custom.css'],
-      components: {
-        Pagination: './src/components/EmptyPagination.astro',
-      },
       sidebar: [
         {
           label: 'Руководства',
@@ -17,7 +14,9 @@ export default defineConfig({
             { label: 'EX-26 Autónomo', link: '/guides/ex-26-autonomo/' },
             { label: 'EX-26 Cuenta Ajena', link: '/guides/ex-26-cuenta-ajena/' },
             { label: 'EX-25 Menores', link: '/guides/ex-25-menores/' },
-            { label: 'Калькулятор пошлин', link: '/reference/tasas
+            { label: 'Калькулятор пошлин', link: '/reference/tasas/' },
+          ],
+        },
       ],
     }),
   ],

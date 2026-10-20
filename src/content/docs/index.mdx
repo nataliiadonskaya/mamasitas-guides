@@ -8,8 +8,7 @@ next: false
 ---
 
 <div class="main-hero">
-  <img src="/_astro/houston.png" alt="MamaSitas Logo" class="hero-avatar" />
-  <h1 class="hero-title">MamaSitas</h1>
+  <img ="hero-title">MamaSitas</h1>
   <p class="hero-subtitle">Всё о документах, легализации и жизни в Испании без лишней воды</p>
 
   <div class="hero-links">
@@ -38,3 +37,10 @@ next: false
     </a>
   </div>
 </div>
+
+<script>
+  // Жестко удаляем блок пагинации со страницы при загрузке
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.pagination-links, footer.sl-flex').forEach(el => el.remove());
+  });
+</script>
