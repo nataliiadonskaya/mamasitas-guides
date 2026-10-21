@@ -1,4 +1,3 @@
-@import "@astrojs/starlight/style";
 
 :root {
   --sl-color-accent: #c7a153;
@@ -109,4 +108,118 @@ main,
 .hero-arrow {
   color: #c7a153;
   font-weight: bold;
+}
+
+/* ВНУТРЕННИЕ СТРАНИЦЫ: скрываем поиск, тему и правое оглавление */
+body:not(:has(.main-hero)) site-search,
+body:not(:has(.main-hero)) starlight-theme-select,
+body:not(:has(.main-hero)) .right-sidebar-container {
+  display: none !important;
+}
+
+/* Бордово-золотое боковое меню */
+body:not(:has(.main-hero)) nav.sidebar,
+body:not(:has(.main-hero)) .sidebar-pane,
+body:not(:has(.main-hero)) .sidebar-container,
+body:not(:has(.main-hero)) .sidebar-content {
+  background-color: #1a0b10 !important;
+  border-right: 1px solid rgba(199, 161, 83, 0.2) !important;
+}
+
+body:not(:has(.main-hero)) nav.sidebar a,
+body:not(:has(.main-hero)) .sidebar-content a {
+  color: #d1c4c6 !important;
+}
+
+body:not(:has(.main-hero)) .sidebar-group label,
+body:not(:has(.main-hero)) .sidebar-group summary,
+body:not(:has(.main-hero)) .sidebar-content .group-label {
+  color: #c7a153 !important;
+  font-weight: 700 !important;
+}
+
+body:not(:has(.main-hero)) nav.sidebar a[aria-current="page"],
+body:not(:has(.main-hero)) .sidebar-content a[aria-current="page"] {
+  background: rgba(199, 161, 83, 0.15) !important;
+  color: #c7a153 !important;
+  border-left: 3px solid #c7a153 !important;
+  font-weight: 600 !important;
+}
+
+/* Калькулятор пошлин */
+.tasa-box {
+  background-color: rgba(43, 22, 27, 0.85) !important;
+  border: 1px solid rgba(199, 161, 83, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin: 1.5rem 0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.tasa-label {
+  display: block;
+  color: #c7a153 !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem;
+}
+
+.tasa-select {
+  width: 100% !important;
+  background-color: #1a0b10 !important;
+  color: #f3e9eb !important;
+  border: 1px solid rgba(199, 161, 83, 0.5) !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  margin-bottom: 1.2rem;
+}
+
+.tasa-select option {
+  background-color: #1a0b10;
+  color: #f3e9eb;
+}
+
+.tasa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tasa-card {
+  background: rgba(26, 11, 16, 0.9) !important;
+  border: 1px solid rgba(199, 161, 83, 0.25) !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+}
+
+.tasa-badge {
+  color: #c7a153 !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.tasa-name {
+  color: #d1c4c6 !important;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.tasa-price {
+  color: #ffffff !important;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.tasa-disclaimer {
+  color: #a8989a !important;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+/* Убираем нижнюю навигацию «Предыдущая / Следующая» только на внутренних страницах */
+body:not(:has(.main-hero)) .pagination-links {
+  display: none !important;
 }
