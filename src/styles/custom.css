@@ -9,19 +9,7 @@
   --sl-color-hairline: #3a1e28;
 }
 
-/* Бордовый фон на всю страницу для всего сайта */
-:root,
-body,
-page,
-main,
-[data-has-hero],
-.page,
-.main-pane {
-  background-color: #1a0b10 !important;
-  background-image: none !important;
-}
-
-/* Убираем пагинацию и шапку ТОЛЬКО на главной странице */
+/* Скрываем шапку и пагинацию СТРОГО на главной странице, а на остальных страницах ВСЁ показываем */
 body:has(.main-hero) header.header,
 body:has(.main-hero) .site-title,
 body:has(.main-hero) .pagination-links,
@@ -36,18 +24,30 @@ body:has(.main-hero) .sl-container {
   margin-top: 0 !important;
 }
 
-/* Главный блок главной страницы */
-.m auto;
+/* Бордовый фон на всю страницу */
+:root,
+body,
+page,
+main,
+[data-has-hero],
+.page,
+.main-pane {
+  background-color: #1a0b10 !important;
+  background-image: none !important;
+}
+
+/* Главный блок */
+.main-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 480px;
+  margin: 0 auto;
   padding: 1.5rem 1rem;
   text-align: center;
 }
 
-/* Аватар-герб */
-.hero-avatar {
-  width: 120px !important;
-  height: 120px !important;
-  max-width: 120px !important;
-  max-height: 120px !important;
+/* Аватарt: 120px !important;
   border: 2px solid #c7a153;
   border-radius: 50%;
   object-fit: cover;
