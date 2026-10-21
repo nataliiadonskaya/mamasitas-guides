@@ -9,21 +9,6 @@
   --sl-color-hairline: #3a1e28;
 }
 
-/* Скрываем шапку и пагинацию СТРОГО на главной странице, а на остальных страницах ВСЁ показываем */
-body:has(.main-hero) header.header,
-body:has(.main-hero) .site-title,
-body:has(.main-hero) .pagination-links,
-body:has(.main-hero) footer.sl-flex {
-  display: none !important;
-}
-
-body:has(.main-hero) .main-frame,
-body:has(.main-hero) .content-panel,
-body:has(.main-hero) .sl-container {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
 /* Бордовый фон на всю страницу */
 :root,
 body,
@@ -43,31 +28,38 @@ main,
   align-items: center;
   max-width: 480px;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 2.5rem 1rem;
   text-align: center;
 }
 
-/* Аватарt: 120px !important;
-  border: 2px solid #c7a153;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 0 25px rgba(199, 161, 83, 0.4);
-  display: block;
-  margin: 0 auto;
+/* Жесткие фиксированные размеры для аватара-герба */
+.hero-avatar {
+  width: 120px !important;
+  height: 120px !important;
+  min-width: 120px !important;
+  min-height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+  border: 2px solid #c7a153 !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  box-shadow: 0 0 25px rgba(199, 161, 83, 0.4) !important;
+  display: block !important;
+  margin: 0 auto 1.2rem auto !important;
 }
 
 /* Заголовок и подзаголовок */
 .hero-title {
-  margin: 0.8rem 0 0.2rem;
-  color: #ffffff;
-  font-size: 2.2rem;
-  font-weight: 800;
+  margin: 0 0 0.4rem !important;
+  color: #ffffff !important;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
 }
 
 .hero-subtitle {
-  margin-bottom: 1.8rem;
-  color: #d1c4c6;
-  font-size: 0.95rem;
+  margin-bottom: 2rem !important;
+  color: #d1c4c6 !important;
+  font-size: 0.95rem !important;
 }
 
 /* Карточки-ссылки */
