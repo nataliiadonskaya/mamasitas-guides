@@ -1,3 +1,4 @@
+@import "@astrojs/starlight/style";
 
 :root {
   --sl-color-accent: #c7a153;
@@ -8,7 +9,7 @@
   --sl-color-hairline: #3a1e28;
 }
 
-/* Скрываем шапку и нижнюю пагинацию ТОЛЬКО на главной странице (где есть класс main-hero) */
+/* Скрываем шапку и пагинацию СТРОГО на главной странице, оставляя руководства в покое */
 body:has(.main-hero) header.header,
 body:has(.main-hero) .site-title,
 body:has(.main-hero) .pagination-links,
@@ -121,9 +122,4 @@ main,
 .hero-arrow {
   color: #c7a153;
   font-weight: bold;
-}
-
-/* Скрываем нижнюю навигацию только на главной MamaSitas */
-body:has(.main-hero) footer .pagination-links {
-  display: none !important;
 }
