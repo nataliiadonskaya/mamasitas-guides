@@ -1,4 +1,5 @@
 
+
 :root {
   --sl-color-accent: #c7a153;
   --sl-color-accent-high: #dfb564;
@@ -219,7 +220,12 @@ body:not(:has(.main-hero)) .sidebar-content a[aria-current="page"] {
   line-height: 1.4;
 }
 
-/* Убираем нижнюю навигацию «Предыдущая / Следующая» только на внутренних страницах */
+/* Убираем нижнюю навигацию на внутренних страницах */
 body:not(:has(.main-hero)) .pagination-links {
+  display: none !important;
+}
+
+/* Убираем нижнюю навигацию на главной странице */
+body:has(.main-hero) .pagination-links {
   display: none !important;
 }

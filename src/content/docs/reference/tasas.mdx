@@ -1,40 +1,60 @@
 ---
 title: Оплата пошлин (Tasas)
-description: Калькулятор и шпаргалка по государственным пошлинам Modelo 790-052 и 790-062.
+description: Калькулятор пошлин Modelo 790-052 и 790-062 для процедур Extranjería в Испании.
 ---
 
-При переходе с временной защиты на стандартную резиденцию (будь то Autónomo, Cuenta Ajena или детские процедуры) без государственных пошлин обойтись не получится. Чтобы вы не запутались в этих бесконечных цифрах и кодах, я собрала всё в один удобный инструмент.
+Выберите категорию и конкретную процедуру. Калькулятор покажет справочную информацию о пошлинах, возможном плательщике и официальных источниках для проверки.
 
----
-
-## 🧮 Интерактивный калькулятор пошлин
+## 🧮 Калькулятор пошлин
 
 <div class="tasa-box">
 
-  <label for="procedure" class="tasa-label">Ваша процедура легализации:</label>
+  <label for="procedure" class="tasa-label">Выберите категорию:</label>
 
   <select id="procedure" class="tasa-select">
-    <option value="autonomo">💼 Переход на Autónomo (EX-26)</option>
-    <option value="cuenta-ajena">🏢 Работа по контракту / Cuenta Ajena (EX-26)</option>
-    <option value="menores">🧒 Резиденция для несовершеннолетних детей (EX-25)</option>
+    <option value="autonomo">💼 Работа на себя (por cuenta propia)</option>
+    <option value="cuenta-ajena">🏢 Работа по найму (por cuenta ajena)</option>
+    <option value="menores">🧒 Резиденция несовершеннолетнего</option>
   </select>
+
+  <div id="procedure-detail-wrap" hidden>
+    <label for="procedure-detail" class="tasa-label">Уточните процедуру:</label>
+    <select id="procedure-detail" class="tasa-select">
+      <option value="">Выберите процедуру</option>
+    </select>
+  </div>
+
+  <div id="salary-wrap" hidden>
+    <label for="salary" class="tasa-label">Размер вознаграждения:</label>
+    <select id="salary" class="tasa-select">
+      <option value="">Выберите вариант</option>
+      <option value="below">Ниже 2 × SMI</option>
+      <option value="above">2 × SMI или выше</option>
+    </select>
+  </div>
 
   <div class="tasa-grid">
     <div class="tasa-card">
       <div class="tasa-badge">Modelo 790-052</div>
-      <div class="tasa-name">Пошлина за проживание (Residencia)</div>
-      <div class="tasa-price" id="res-052">€10,94</div>
+      <div class="tasa-name">Пошлина за резиденцию</div>
+      <div class="tasa-price" id="res-052">Выберите процедуру</div>
+      <p class="tasa-disclaimer" id="detail-052">Результат появится после выбора процедуры.</p>
     </div>
 
     <div class="tasa-card" id="card-062">
       <div class="tasa-badge">Modelo 790-062</div>
-      <div class="tasa-name">Пошлина за работу (Trabajo)</div>
-      <div class="tasa-price" id="res-062">€203,84</div>
+      <div class="tasa-name">Пошлина за разрешение на работу</div>
+      <div class="tasa-price" id="res-062">Выберите процедуру</div>
+      <p class="tasa-disclaimer" id="detail-062">Результат появится после выбора процедуры.</p>
     </div>
   </div>
 
   <p class="tasa-disclaimer">
-    Суммы приведены для ориентира. Перед оплатой обязательно проверяйте актуальные ставки на официальных сайтах ведомств.
+    **Важно:** калькулятор показывает ориентировочные суммы пошлин. Итоговая сумма зависит от типа процедуры и обстоятельств заявителя. Перед оплатой проверяйте актуальный размер пошлины и соответствующий эпиграф в официальной форме.
+  </p>
+
+  <p>
+    <a href="https://inclusion.gob.es/web/migraciones/descarga-y-pago-telematico-de-tasas-de-autorizaciones-de-extranjeria" target="_blank" rel="noopener noreferrer">Официальные формы и оплата пошлин Extranjería ↗</a>
   </p>
 
 </div>
@@ -43,19 +63,35 @@ description: Калькулятор и шпаргалка по государс�
 
 ---
 
-## 📌 Как правильно оплатить и не запутаться
+## 📌 Как пользоваться результатом
 
-Электронная подача через Mercurio требует аккуратности в деталях:
+1. Выберите категорию.
+2. Выберите конкретную процедуру во втором списке.
+3. Если появится дополнительный вопрос о зарплате, выберите подходящий вариант.
+4. Проверьте описание тарифа и кто должен его оплачивать.
+5. Откройте официальную инструкцию и сверьте сумму перед оплатой.
 
-1. **Заполните Modelo 790.** Выберите правильный код и нужный пункт тарифа под вашу ситуацию.
-2. **Оплатите пошлину.** Убедитесь, что банк выдал вам подтверждение (желательно с NRC — Número de Referencia Completo).
-3. **Сохраните квитанцию.** Объедините её с остальными документами в чистый PDF перед загрузкой в систему.
+## ⚠️ Важно
+
+- Modelo 790 código 052 предназначена для пошлин за резиденцию и соответствующую документацию.
+- Modelo 790 código 062 используется для пошлин за разрешения на работу.
+- При первоначальном разрешении, модификации, продлении и переходе с временной защиты могут применяться разные основания и тарифы.
+- Для оформления TIE может требоваться Modelo 790 código 012. Этот калькулятор не рассчитывает пошлину 012.
+- Не оплачивайте пошлину по аналогии с похожей процедурой.
+
+## 🔎 Официальные источники
+
+- [Министерство миграции: формы и оплата пошлин](https://inclusion.gob.es/web/migraciones/descarga-y-pago-telematico-de-tasas-de-autorizaciones-de-extranjeria)
+- [Первоначальное разрешение на работу по найму](https://www.inclusion.gob.es/es/web/migraciones/w/autorizacion-inicial-de-residencia-temporal-y-trabajo-por-cuenta-ajena-hi-16-)
+- [Первоначальное разрешение на работу на себя](https://www.inclusion.gob.es/web/migraciones/w/autorizacion-inicial-de-residencia-temporal-y-trabajo-por-cuenta-propia)
+- [Модификация с резиденции, не дававшей права на работу](https://www.inclusion.gob.es/web/migraciones/w/55-bis.-modificaciones-desde-situaciones-de-residencia-que-no-habilitaban-a-trabajar)
 
 ---
 
-:::note[⚡ Нужна помощь с пошлинами?]
+:::note[Нужна помощь с документами?]
 
-Если сомневаетесь, тот ли код выбрали или как правильно прикрепить квитанцию к пакету документов — лучше перепроверить заранее.
+Если вы сомневаетесь в выборе формы или пункта тарифа, можно обратиться в MamaSitas за информационной помощью.
 
 👉 [Написать в Telegram MamaSitas](https://t.me/mamasitas_es)
+
 :::

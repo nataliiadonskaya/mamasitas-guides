@@ -1,8 +1,9 @@
-// @ts-check
+ // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
+  site: 'https://mamasitas-guides.vercel.app',
   integrations: [
     starlight({
       title: 'MamaSitas',
@@ -15,6 +16,12 @@ export default defineConfig({
             { label: 'EX-26 Cuenta Ajena', link: '/guides/ex-26-cuenta-ajena/' },
             { label: 'EX-25 Menores', link: '/guides/ex-25-menores/' },
             { label: 'Калькулятор пошлин', link: '/reference/tasas/' },
+          ],
+        },
+        {
+          label: 'Платные руководства',
+          items: [
+            { label: 'Каталог', link: '/paid/' },
           ],
         },
       ],
