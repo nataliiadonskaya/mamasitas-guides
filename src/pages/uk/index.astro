@@ -1,0 +1,91 @@
+---
+import '../../styles/custom.css';
+---
+
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MamaSitas — База знань з легалізації в Іспанії</title>
+    <meta name="description" content="Усе про документи, легалізацію та життя в Іспанії без зайвої води" />
+  </head>
+  <body>
+    <nav class="language-switch" aria-label="Вибір мови">
+      <a href="/">RU</a>
+      <span>|</span>
+      <a href="/uk/" aria-current="page">UA</a>
+    </nav>
+
+    <div class="main-hero">
+      <img src="/avatar.jpg" alt="Логотип MamaSitas" class="hero-avatar"/>
+      <h1 class="hero-title">MamaSitas</h1>
+      <p class="hero-subtitle">База знань з легалізації в Іспанії</p>
+
+      <div class="hero-links">
+        <a href="/uk/guides/ex-26-autonomo/" class="hero-card">
+            <span class="hero-icon">💼</span>
+            <span class="hero-text">Перехід на Autónomo (EX-26)</span>
+            <span class="hero-arrow">→</span>
+        </a>
+        <a href="/uk/guides/ex-26-cuenta-ajena/" class="hero-card">
+          <span class="hero-icon">📋</span>
+          <span class="hero-text">Робота за контрактом (Cuenta Ajena)</span>
+          <span class="hero-arrow">→</span>
+        </a>
+        <a href="/uk/guides/ex-25-menores/" class="hero-card">
+          <span class="hero-icon">👶</span>
+          <span class="hero-text">Резиденція для дітей (EX-25)</span>
+          <span class="hero-arrow">→</span>
+        </a>
+        <a href="/uk/reference/tasas/" class="hero-card">
+          <span class="hero-icon">🧮</span>
+          <span class="hero-text">Калькулятор зборів (Tasas)</span>
+          <span class="hero-arrow">→</span>
+        </a>
+        <a href="/uk/paid/" class="hero-card">
+          <span class="hero-icon">📚</span>
+          <span class="hero-text">Платні посібники MamaSitas</span>
+          <span class="hero-arrow">→</span>
+        </a>
+        <a href="https://t.me/mamasitas_es" target="_blank" rel="noopener noreferrer" class="hero-card hero-card-telegram">
+          <span class="hero-text">Telegram-канал MamaSitas</span>
+        </a>
+      </div>
+    </div>
+
+    <footer class="home-copyright">© 2026 MamaSitas</footer>
+  </body>
+</html>
+
+<style>
+  .home-copyright {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    color: #c7a153;
+    font-size: 0.8rem;
+    opacity: 0.85;
+  }
+
+  .language-switch {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.45rem;
+    align-items: center;
+    font-size: 0.8rem;
+    z-index: 100;
+  }
+
+  .language-switch a {
+    color: #c7a153;
+    text-decoration: none;
+  }
+
+  .language-switch a[aria-current="page"] {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

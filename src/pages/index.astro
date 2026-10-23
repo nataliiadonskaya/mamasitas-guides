@@ -1,3 +1,4 @@
+
 ---
 import '../styles/custom.css';
 ---
@@ -7,9 +8,24 @@ import '../styles/custom.css';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MamaSitas — База знаний по легализации в Испании</title>
-    <meta name="description" content="Всё о документах, легализации и жизни в Испании без лишней воды" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="Всё о документах, легализации и жизни в Испании без лишней воды"
+    />
   </head>
   <body>
+    <nav class="language-switch" aria-label="Выбор языка">
+      <a href="/" aria-current="page">RU</a>
+      <span>|</span>
+      <a href="/uk/">UA</a>
+    </nav>
+
     <div class="main-hero">
       <img src="/avatar.jpg" alt="MamaSitas Logo" class="hero-avatar" />
       <h1 class="hero-title">MamaSitas</h1>
@@ -21,16 +37,19 @@ import '../styles/custom.css';
           <span class="hero-text">Переход на Autónomo (EX-26)</span>
           <span class="hero-arrow">→</span>
         </a>
+
         <a href="/guides/ex-26-cuenta-ajena/" class="hero-card">
           <span class="hero-icon">📋</span>
           <span class="hero-text">Работа по контракту (Cuenta Ajena)</span>
           <span class="hero-arrow">→</span>
         </a>
+
         <a href="/guides/ex-25-menores/" class="hero-card">
           <span class="hero-icon">👶</span>
           <span class="hero-text">Резиденция для детей (EX-25)</span>
           <span class="hero-arrow">→</span>
         </a>
+
         <a href="/reference/tasas/" class="hero-card">
           <span class="hero-icon">🧮</span>
           <span class="hero-text">Калькулятор пошлин (Tasas)</span>
@@ -43,15 +62,50 @@ import '../styles/custom.css';
           <span class="hero-arrow">→</span>
         </a>
 
-        <a href="https://t.me/mamasitas_es" target="_blank" class="hero-card hero-card-telegram">
+        <a
+          href="https://t.me/mamasitas_es"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hero-card hero-card-telegram"
+        >
           <span class="hero-text">Telegram-канал MamaSitas</span>
         </a>
       </div>
     </div>
+
     <footer class="home-copyright">© 2026 MamaSitas</footer>
   </body>
 </html>
 
 <style>
-  .home-copyright { margin-top: 2rem; padding: 1rem; text-align: center; color: #c7a153; font-size: 0.8rem; opacity: 0.85; }
+  .home-copyright {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    color: #c7a153;
+    font-size: 0.8rem;
+    opacity: 0.85;
+  }
+
+  .language-switch {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.45rem;
+    align-items: center;
+    font-size: 0.8rem;
+    z-index: 100;
+  }
+
+  .language-switch a {
+    color: #c7a153;
+    text-decoration: none;
+  }
+
+  .language-switch a[aria-current="page"] {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 </style>

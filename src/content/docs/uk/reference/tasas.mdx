@@ -1,0 +1,97 @@
+---
+title: Сплата зборів (Tasas)
+description: Калькулятор зборів Modelo 790-052 та 790-062 для процедур Extranjería в Іспанії.
+---
+
+Виберіть категорію та конкретну процедуру. Калькулятор покаже довідкову інформацію про збори, можливого платника та офіційні джерела для перевірки.
+
+## 🧮 Калькулятор зборів
+
+<div class="tasa-box">
+
+  <label for="procedure" class="tasa-label">Виберіть категорію:</label>
+
+  <select id="procedure" class="tasa-select">
+    <option value="autonomo">💼 Робота на себе (por cuenta propia)</option>
+    <option value="cuenta-ajena">🏢 Робота за наймом (por cuenta ajena)</option>
+    <option value="menores">🧒 Проживання неповнолітньої дитини</option>
+  </select>
+
+  <div id="procedure-detail-wrap" hidden>
+    <label for="procedure-detail" class="tasa-label">Уточніть процедуру:</label>
+    <select id="procedure-detail" class="tasa-select">
+      <option value="">Виберіть процедуру</option>
+    </select>
+  </div>
+
+  <div id="salary-wrap" hidden>
+    <label for="salary" class="tasa-label">Розмір заробітної плати:</label>
+    <select id="salary" class="tasa-select">
+      <option value="">Виберіть варіант</option>
+      <option value="below">Менше ніж 2 × SMI</option>
+      <option value="above">2 × SMI або більше</option>
+    </select>
+  </div>
+
+  <div class="tasa-grid">
+    <div class="tasa-card">
+      <div class="tasa-badge">Modelo 790-052</div>
+      <div class="tasa-name">Збір за проживання</div>
+      <div class="tasa-price" id="res-052">Виберіть процедуру</div>
+      <p class="tasa-disclaimer" id="detail-052">Результат з’явиться після вибору процедури.</p>
+    </div>
+
+    <div class="tasa-card" id="card-062">
+      <div class="tasa-badge">Modelo 790-062</div>
+      <div class="tasa-name">Збір за дозвіл на роботу</div>
+      <div class="tasa-price" id="res-062">Виберіть процедуру</div>
+      <p class="tasa-disclaimer" id="detail-062">Результат з’явиться після вибору процедури.</p>
+    </div>
+  </div>
+
+  <p class="tasa-disclaimer">
+    <strong>Важливо:</strong> калькулятор показує орієнтовні суми зборів. Остаточна сума залежить від типу процедури та обставин заявника. Перед оплатою перевіряйте актуальний розмір збору та відповідний epígrafe в офіційній формі.
+  </p>
+
+  <p>
+    <a href="https://inclusion.gob.es/web/migraciones/descarga-y-pago-telematico-de-tasas-de-autorizaciones-de-extranjeria" target="_blank" rel="noopener noreferrer">Офіційні форми та сплата зборів Extranjería ↗</a>
+  </p>
+
+</div>
+
+<script src="/scripts/tasas-uk.js" defer></script>
+
+---
+
+## 📌 Як користуватися результатом
+
+1. Виберіть категорію.
+2. Виберіть конкретну процедуру в другому списку.
+3. Якщо з’явиться додаткове запитання про зарплату, виберіть відповідний варіант.
+4. Перевірте опис тарифу та інформацію про те, хто повинен його сплачувати.
+5. Відкрийте офіційну інструкцію та звірте суму перед оплатою.
+
+## ⚠️ Важливо
+
+- Modelo 790 código 052 призначена для зборів за проживання та відповідну документацію.
+- Modelo 790 código 062 використовується для зборів за дозволи на роботу.
+- Для первинного дозволу, модифікації, продовження та переходу з тимчасового захисту можуть застосовуватися різні підстави й тарифи.
+- Для оформлення TIE може знадобитися Modelo 790 código 012. Цей калькулятор не розраховує збір 012.
+- Не сплачуйте збір за аналогією зі схожою процедурою.
+
+## 🔎 Офіційні джерела
+
+- [Міністерство міграції: форми та сплата зборів](https://inclusion.gob.es/web/migraciones/descarga-y-pago-telematico-de-tasas-de-autorizaciones-de-extranjeria)
+- [Первинний дозвіл на роботу за наймом](https://www.inclusion.gob.es/es/web/migraciones/w/autorizacion-inicial-de-residencia-temporal-y-trabajo-por-cuenta-ajena-hi-16-)
+- [Первинний дозвіл на роботу на себе](https://www.inclusion.gob.es/web/migraciones/w/autorizacion-inicial-de-residencia-temporal-y-trabajo-por-cuenta-propia)
+- [Модифікація дозволу з проживання, яке не надавало права на роботу](https://www.inclusion.gob.es/web/migraciones/w/55-bis.-modificaciones-desde-situaciones-de-residencia-que-no-habilitaban-a-trabajar)
+
+---
+
+:::note[Потрібна допомога з документами?]
+
+Якщо ви сумніваєтеся у виборі форми або пункту тарифу, можна звернутися до MamaSitas по інформаційну допомогу.
+
+👉 [Написати в Telegram MamaSitas](https://t.me/mamasitas_es)
+
+:::
