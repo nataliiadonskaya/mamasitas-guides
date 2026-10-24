@@ -987,3 +987,102 @@ body:not(:has(.main-hero)) .starlight-aside li {
   color: #542735 !important;
   line-height: 1.7;
 }
+
+/* === MAMASITAS: BACK TO TOP === */
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid #E6C987;
+  border-radius: 50%;
+  background: #542735;
+  color: #E6C987;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(30, 10, 18, 0.25);
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.back-to-top[hidden] {
+  display: none !important;
+}
+
+.back-to-top:hover {
+  background: #704052;
+  transform: translateY(-2px);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid #E6C987;
+  outline-offset: 3px;
+}
+
+/* === MAMASITAS: MOBILE SEARCH IN PAGE FLOW === */
+@media (max-width: 49.99rem) {
+  site-search.mobile-search-in-flow {
+    display: block !important;
+    width: 100%;
+    margin: 0 0 1.25rem;
+  }
+
+  site-search.mobile-search-in-flow button[data-open-modal] {
+    display: flex !important;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    min-height: 44px;
+    padding: 0.65rem 0.85rem;
+    gap: 0.65rem;
+    border: 1px solid rgba(84, 39, 53, 0.3);
+    border-radius: 10px;
+    background: #F0E6D8;
+    color: #542735;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  site-search.mobile-search-in-flow button[data-open-modal] > span {
+    display: inline !important;
+  }
+
+  site-search.mobile-search-in-flow button[data-open-modal]:hover {
+    border-color: #A88443;
+    background: #FFFFFF;
+  }
+
+  .back-to-top {
+    right: 14px;
+    bottom: 16px;
+    width: 42px;
+    height: 42px;
+    font-size: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+/* Мобильная версия: шапка прокручивается вместе со страницей */
+@media (max-width: 49.99rem) {
+  body:not(:has(.main-hero)) .page > header.header {
+    position: absolute !important;
+  }
+
+  body:not(:has(.main-hero)) .page > .main-frame {
+    padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height));
+  }
+}

@@ -1,6 +1,41 @@
+
 ---
 import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
 import LegalFooter from './LegalFooter.astro';
 ---
+
 <DefaultFooter />
 <LegalFooter />
+
+<button
+  class="back-to-top"
+  type="button"
+  aria-label="Вернуться наверх"
+  hidden
+>
+  ↑
+</button>
+
+<script>
+  const backToTop = document.querySelector<HTMLButtonElement>('.back-to-top');
+
+  const updateBackToTop = () => {
+    if (backToTop) {
+      backToTop.hidden = window.scrollY < 300;
+    }
+  };
+
+  backToTop?.addEventListener('click', () => {
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    window.scrollTo({
+      top: 0,
+      behavior: reduceMotion ? 'auto' : 'smooth',
+    });
+  });
+
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  updateBackToTop();
+</script>
