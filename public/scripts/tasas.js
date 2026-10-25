@@ -54,6 +54,7 @@
         note052:
           "Modelo 790-052, epígrafe 2.1.3. Первоначальное разрешение на проживание и работу. Плательщик: заявитель.",
         fee062: "salary-dependent",
+        showSMIInfo: true,
         note062:
           "Modelo 790-062, epígrafe 3.2.1. Размер пошлины зависит от вознаграждения. Плательщик: работодатель."
       },
@@ -79,32 +80,30 @@
       }
     ],
 
-    
+    "proteccion-temporal": [
+      {
+        value: "cuenta-ajena",
+        label: "Переход с ТЗ на por cuenta ajena",
+        fee052: FEES.residenceModification,
+        note052:
+          "Modelo 790-052, epígrafe 2.5.2. Модификация разрешения на проживание в разрешение на проживание и работу. Пошлина: 10,94 €. Основание: Instrucciones SEM 2/2026, instrucción primera, artículo 191.",
+        fee062: "salary-dependent",
+        showSMIInfo: true,
+        note062:
+          "Modelo 790-062, epígrafe 3.2.1. Первоначальное разрешение на работу por cuenta ajena. При зарплате ниже 2 × SMI: 203,84 €; при зарплате, равной 2 × SMI или выше: 407,71 €. Плательщик: работодатель."
+      },
+      {
+        value: "autonomo",
+        label: "Переход с ТЗ на por cuenta propia",
+        fee052: FEES.residenceModification,
+        note052:
+          "Modelo 790-052, epígrafe 2.5.2. Модификация разрешения на проживание в разрешение на проживание и работу. Пошлина: 10,94 €. Основание: Instrucciones SEM 2/2026, instrucción primera, artículo 191.",
+        fee062: FEES.workSelfEmployedInitial,
+        note062:
+          "Modelo 790-062, epígrafe 3.3.1. Первоначальное разрешение на работу por cuenta propia. Пошлина: 203,84 €. Плательщик: заявитель."
+      }
+    ],
 
-   
-"proteccion-temporal": [
-  {
-    value: "cuenta-ajena",
-    label: "Переход с ТЗ на por cuenta ajena",
-    fee052: FEES.residenceModification,
-    note052:
-      "Modelo 790-052, epígrafe 2.5.2. Модификация разрешения на проживание в разрешение на проживание и работу. Пошлина: 10,94 €. Основание: Instrucciones SEM 2/2026, instrucción primera, artículo 191.",
-    fee062: "salary-dependent",
-    note062:
-      "Modelo 790-062, epígrafe 3.2.1. Первоначальное разрешение на работу por cuenta ajena. При зарплате ниже 2 × SMI: 203,84 €; при зарплате, равной 2 × SMI или выше: 407,71 €. Плательщик: работодатель."
-  },
-  {
-    value: "autonomo",
-    label: "Переход с ТЗ на por cuenta propia",
-    fee052: FEES.residenceModification,
-    note052:
-      "Modelo 790-052, epígrafe 2.5.2. Модификация разрешения на проживание в разрешение на проживание и работу. Пошлина: 10,94 €. Основание: Instrucciones SEM 2/2026, instrucción primera, artículo 191.",
-    fee062: FEES.workSelfEmployedInitial,
-    note062:
-      "Modelo 790-062, epígrafe 3.3.1. Первоначальное разрешение на работу por cuenta propia. Пошлина: 203,84 €. Плательщик: заявитель."
-  }
-],
-  
     menores: [
       {
         value: "family",
@@ -147,13 +146,21 @@
     const salary = $("salary");
     const detailWrap = $("procedure-detail-wrap");
     const salaryWrap = $("salary-wrap");
+    const smiInfo = $("smi-info");
     const fee052 = $("res-052");
     const fee062 = $("res-062");
     const note052 = $("detail-052");
     const note062 = $("detail-062");
     const card062 = $("card-062");
 
-    if (!category || !detail || !fee052 || !fee062 || !note052 || !note062) {
+    if (
+      !category ||
+      !detail ||
+      !fee052 ||
+      !fee062 ||
+      !note052 ||
+      !note062
+    ) {
       return;
     }
 
@@ -174,13 +181,17 @@
       setText(fee062, "Выберите процедуру");
       setText(note052, "Результат появится после выбора процедуры.");
       setText(note062, "Результат появится после выбора процедуры.");
+
       setVisible(salaryWrap, false);
+      setVisible(smiInfo, false);
       setVisible(card062, true);
     }
 
     function updateCalculator() {
       const items = procedures[category.value] || [];
-      const selected = items.find((item) => item.value === detail.value);
+      const selected = items.find(
+        (item) => item.value === detail.value
+      );
 
       if (!selected) {
         renderEmpty();
@@ -188,6 +199,10 @@
       }
 
       const needsSalary = selected.fee062 === "salary-dependent";
+      const needsSMIInfo =
+        Boolean(selected.showSMIInfo) || needsSalary;
+
+      setVisible(smiInfo, needsSMIInfo);
       setVisible(salaryWrap, needsSalary);
 
       let amount062 = selected.fee062;
@@ -260,7 +275,10 @@
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initTasasCalculator);
+    document.addEventListener(
+      "DOMContentLoaded",
+      initTasasCalculator
+    );
   } else {
     initTasasCalculator();
   }
